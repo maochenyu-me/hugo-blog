@@ -1,0 +1,146 @@
+name: Friend Link Sync
+
+# 三条直线，没有别的分支：
+#
+#   ① 收录（半自动）：用户按「友链申请」模板提交议题 → 自动打上「友链申请」标签
+#      → 你关闭议题 → 机器人把字段转成 YAML 代码块贴在评论里 → 你自己复制进 data/links.yaml
+#
+#   ② 下线（全自动）：你给议题打上「失效」标签并重新打开议题
+#      → 工作流把该友链移进「😭 失效暂留」分组，并在条目上方写一行 `# 原位置：...`
+#      → 自动提交并部署
+#
+#   ③ 恢复（全自动）：用户评论告诉你站点恢复了 → 你摘掉「失效」标签并关闭议题
+#      → 工作流把它从「失效暂留」迁回注释里记录的原位置 → 自动提交并部署
+#
+# 标签→重开 / 摘标签→关闭 这两种操作的先后顺序都兼容，重复触发幂等。
+#
+# 注意：用 GITHUB_TOKEN 推送的 commit 不会再触发 deploy.yml 的 push 事件，
+#      因此这里提交完成后显式用 workflow_dispatch 拉起部署。
+
+on:
+  issues:
+    types: [opened, closed, reopened, labeled, unlabeled]
+
+permissions:
+  contents: write
+  issues: write
+  actions: write
+
+concurrency:
+  group: friend-link-sync
+  cancel-in-progress: false
+
+env:
+  LINKS_FILE: data/links.yaml
+  LINKPAGE_FILE: content/link.md
+  LABEL_APPLY: 友链申请
+  LABEL_DEAD: 失效
+
+jobs:
+  sync:
+    # 只处理跟友链相关的议题
+    if: |
+      startsWith(github.event.issue.title, '[友链申请]') ||
+      contains(github.event.issue.labels.*.name, '友链申请') ||
+      contains(github.event.issue.labels.*.name, '失效') ||
+      contains(github.event.issue.body, '### 站点地址')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Ensure labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh label create "$LABEL_APPLY" --color 0E8A16 --description "通过「友链申请」模板提交的议题" >/dev/null 2>&1 || true
+          gh label create "$LABEL_DEAD"  --color B60205 --description "站点失效，工作流会把它移入失效暂留分组" >/dev/null 2>&1 || true
+          echo "标签就绪：$LABEL_APPLY / $LABEL_DEAD"
+
+      - name: Auto label friend-link issue
+        if: github.event.action == 'opened'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          if ! printf '%s' "$ISSUE_BODY" | grep -q '### 站点地址'; then
+            echo "不是友链申请模板提交的议题，跳过自动打标签。"
+            exit 0
+          fi
+          gh issue edit "$ISSUE_NUMBER" --add-label "$LABEL_APPLY"
+          echo "已为 #$ISSUE_NUMBER 添加标签「$LABEL_APPLY」"
+
+      - name: Collect issue context
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          TMP_DIR="$RUNNER_TEMP/friend-link"
+          mkdir -p "$TMP_DIR"
+          echo "TMP_DIR=$TMP_DIR" >> "$GITHUB_ENV"
+          gh api "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}" > "$TMP_DIR/issue.json"
+          gh api --paginate --slurp "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}/comments?per_page=100" > "$TMP_DIR/comments.json"
+          echo "已抓取议题 #${ISSUE_NUMBER} 及其评论"
+
+      - name: Apply friend link change
+        id: apply
+        run: |
+          set -euo pipefail
+          node tools/friend-link.mjs handle \
+            --root . \
+            --issue "$TMP_DIR/issue.json" \
+            --comments "$TMP_DIR/comments.json" \
+            --result "$TMP_DIR/result.json" \
+            --commentfile "$TMP_DIR/comment.md"
+
+      - name: Commit and push
+        if: steps.apply.outputs.changed == 'true'
+        env:
+          SUMMARY: ${{ steps.apply.outputs.summary }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$LINKS_FILE" "$LINKPAGE_FILE"
+          if git diff --cached --quiet; then
+            echo "没有实际改动，跳过提交。"
+            exit 0
+          fi
+          git commit -m "chore(friend-link): #${ISSUE_NUMBER} ${SUMMARY}"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+
+      - name: Trigger Cloudflare deploy
+        if: steps.apply.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run deploy.yml --ref main
+          echo "已请求重新部署"
+
+      - name: Reply on issue
+        if: steps.apply.outputs.has_comment == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          jq -Rs '{body: .}' "$TMP_DIR/comment.md" > "$TMP_DIR/comment.json"
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/issues/${ISSUE_NUMBER}/comments" --input "$TMP_DIR/comment.json"
+          echo "已回复议题 #${ISSUE_NUMBER}"

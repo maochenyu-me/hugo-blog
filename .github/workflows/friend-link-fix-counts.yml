@@ -1,0 +1,89 @@
+name: Friend Link Fix Counts
+
+# 派生数据自动校正。
+#
+# 背景：data/links.yaml 里每个分组都写着「这里有 N 个正在发光的小站点。」和「N sites」，
+# content/link.md 的 hero 里写着「N 个分组 / N 位友人」。这些数字都是从 sites 条目数
+# 算出来的派生数据，手工维护必然漂移。
+#
+# 手动粘贴新友链（或手工增删分组/条目）后 push，本工作流会自动把三处数字对齐并提交，
+# 然后拉起 deploy.yml 让线上拿到校正后的版本。
+#
+# 两个关键点：
+#   1. 用 GITHUB_TOKEN 推送的 commit 不会再触发 push 事件，所以校正提交完成后
+#      必须显式 gh workflow run deploy.yml；否则线上会一直停在校正前的版本。
+#   2. concurrency 与 friend-link.yml 共用同一个 group，避免两个工作流同时改同一批文件。
+#      （GITHUB_TOKEN 的提交本就不会再触发本工作流，不存在死循环。）
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/links.yaml
+      - content/link.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: friend-link-sync
+  cancel-in-progress: false
+
+env:
+  LINKS_FILE: data/links.yaml
+  LINKPAGE_FILE: content/link.md
+
+jobs:
+  fix-counts:
+    # 机器人自己的提交不处理，兜底防止将来换成 PAT 后出现自触发循环
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Recompute counts
+        id: fix
+        run: |
+          set -euo pipefail
+          node tools/friend-link.mjs fix-counts
+          if git diff --quiet -- "$LINKS_FILE" "$LINKPAGE_FILE"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "✓ 三处数字本来就是对的，无需提交。"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "发现计数不一致，准备提交校正结果："
+            git --no-pager diff --stat -- "$LINKS_FILE" "$LINKPAGE_FILE"
+          fi
+
+      - name: Commit and push correction
+        if: steps.fix.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$LINKS_FILE" "$LINKPAGE_FILE"
+          git commit -m "chore(friend-link): 自动校正分组计数与友链页数字"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+
+      - name: Re-deploy with corrected counts
+        if: steps.fix.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run deploy.yml --ref main
+          echo "已请求重新部署（会取消掉此前那次用旧数字的部署）"

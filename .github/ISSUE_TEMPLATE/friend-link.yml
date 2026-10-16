@@ -1,0 +1,70 @@
+name: 友链申请
+description: 申请与本站交换友链，请按表单填写站点信息
+title: "[友链申请] "
+labels: ["友链申请"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你愿意和本站交换友链！提交前请先阅读 **[友链申请说明](https://blog.kemiaosw.top/addlink/)** 与 **[友链页](https://blog.kemiaosw.top/link/)**。
+
+        提交后由站长人工审核。审核通过后，站长会在此议题下评论并关闭它，届时你的站点会自动出现在友链页对应分组里。
+
+        > 请确保站点能稳定访问、不含违法违规内容；申请前最好已经在本站添加了对方的友链。
+  - type: input
+    id: name
+    attributes:
+      label: 站点名称
+      description: 会作为友链卡片的标题
+      placeholder: 例如：清羽飞扬
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 站点地址
+      description: 站点首页完整地址，必须带 https:// 或 http:// 前缀
+      placeholder: https://example.com/
+    validations:
+      required: true
+  - type: input
+    id: avatar
+    attributes:
+      label: 头像地址
+      description: 头像图片的直链地址，建议正方形、webp 或 png
+      placeholder: https://example.com/avatar.webp
+    validations:
+      required: true
+  - type: input
+    id: desc
+    attributes:
+      label: 一句话描述
+      description: 会显示在友链卡片上，建议 20 字以内
+      placeholder: 例如：无限进步！
+    validations:
+      required: true
+  - type: input
+    id: siteshot
+    attributes:
+      label: 站点截图
+      description: 选填。首页截图直链，建议宽 400 比例；留空则卡片自动使用无截图样式
+      placeholder: https://example.com/siteshot.webp
+    validations:
+      required: false
+  - type: input
+    id: linkPage
+    attributes:
+      label: 友链页链接
+      description: 选填。你自己友链页的地址，填写后卡片头像上会出现友链页入口
+      placeholder: https://example.com/link/
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认事项
+      options:
+        - label: 我已阅读并遵守上述友链要求，且站点不含违法违规内容
+          required: true
+        - label: 我已经在自己的站点添加了本站友链，或承诺审核通过后立即添加
+          required: true

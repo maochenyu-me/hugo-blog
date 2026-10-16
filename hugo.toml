@@ -91,12 +91,12 @@ summaryLength = 120
   # 主题三档 light/dark/auto，localStorage 持久化，head 内联脚本防白闪
   defaultTheme = 'auto'
   # 页脚运行计时起点
-  runtimeStart = '2021-12-12T01:27:36+08:00'
+  runtimeStart = '2024-11-01T012:05:36+08:00'
   # 版权与备案（保留源站占位）
-  copyrightStartYear = 2021
-  beianIcp = '陕ICP备2024028531号-2'
-  beianPolice = '陕公网安备61011602000637号'
-  beianPoliceCode = '61011602000637'
+  copyrightStartYear = 2024
+  beianIcp = ''
+  beianPolice = ''
+  beianPoliceCode = ''
   # 页脚技术署名：仅保留 Hugo（克喵 2026-10-06 拍板）
   footerCredit = 'Hugo'
 
@@ -150,6 +150,37 @@ summaryLength = 120
   # 字体（正文悠哉体走源站分片 CDN）
   [params.fonts]
     yozaiCss = 'https://jsd.liiiu.cn/gh/willow-god/Sharding-fonts/Yozai-Medium/result.min.css'
+
+  # 页面背景（明暗各一套壁纸 + 底色 + 微调）
+  # 由 partials/background-style.html 渲染成 head 里的一段 <style>；
+  # 整段删掉 = 回到主题内置默认（themes/kemiao/assets/css/footer.css 里那套）
+  [params.background]
+    # 总开关：false 时只保留底色（网格/噪点仍在），不渲染壁纸图
+    enable = true
+    # 壁纸铺法，明暗共用（CSS background-position / background-size）
+    position = 'top center'
+    size = 'cover'
+    # 放大倍数，用于盖住 blur 造成的边缘毛边；1 = 不放大
+    scale = 1.035
+
+    [params.background.light]
+      # 站内路径（blog/static 下，如 /imgs/xxx.webp）或外链 URL 皆可
+      # 只填 light 时，深色会自动复用同一张
+      image = '/images/bg/light.jpg'
+      # 页面基础色 --background：底色、卡片、渐变遮罩都由它派生
+      color = '#f2f5ec'
+      # 该层整体透明度
+      opacity = 0.34
+      # 壁纸滤镜：blur(Npx) saturate(N)
+      blur = 6
+      saturate = 1.16
+
+    [params.background.dark]
+      image = '/images/bg/dark.jpg'
+      color = '#10131a'
+      opacity = 0.38
+      blur = 6
+      saturate = 1.18
   # 统计（默认关闭）
   [params.umami]
     enable = false

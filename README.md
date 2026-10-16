@@ -93,6 +93,7 @@ Hugo 约定：站点根目录与主题同路径的文件**优先于主题**。�
 
 | 功能 | 切换方式 |
 | --- | --- |
+| 页面背景 | `[params.background]` 明暗两套壁纸 + 底色 + 微调，见下方「页面背景」 |
 | 评论 | `[params.comments] provider = 'artalk' \| 'twikoo'`，各后端地址在对应子节 |
 | 搜索 | `[params.search] provider = 'pagefind' \| 'algolia'`，algolia 凭据已内置源站示例 |
 | 图标 | `[params.icons] provider = 'local' \| 'cdn'`，local 读主题 `static/fontawesome/` |
@@ -100,6 +101,41 @@ Hugo 约定：站点根目录与主题同路径的文件**优先于主题**。�
 | 安全跳转 | `[params.safego]` 倒计时与协议白名单；外链自动改写为 `/safego/?u=<base64>` |
 | 说说 | `[params.shuoshuo] source = 'local' \| 'api' \| 'tg'`，见下方「说说数据源」 |
 | 朋友圈 | `[params.fcircle]` JSON 源 |
+
+### 页面背景
+
+全站背景层（`.site-backdrop`：壁纸 + 底部渐隐遮罩，网格/噪点在其上层另管）由 `[params.background]` 驱动，明暗各一套：
+
+```toml
+[params.background]
+  enable = true            # false = 不渲染壁纸图，只留底色（网格/噪点仍在）
+  position = 'top center'  # 明暗共用，CSS background-position
+  size = 'cover'           # 明暗共用，CSS background-size
+  scale = 1.035            # 明暗共用，放大倍数（盖住 blur 后的边缘毛边）
+
+  [params.background.light]
+    image = '/imgs/default-light.webp'  # 站内路径或外链 URL 皆可
+    color = '#f2f5ec'                   # 页面基础色 --background
+    opacity = 0.34                      # 该层整体透明度
+    blur = 6                            # 壁纸模糊半径（px）
+    saturate = 1.16                     # 壁纸饱和度
+
+  [params.background.dark]
+    image = '/imgs/default-dark.webp'
+    color = '#10131a'
+    opacity = 0.38
+    blur = 6
+    saturate = 1.18
+```
+
+约定三条：
+
+- **只填 `light.image`** → 深色自动复用同一张；两个 `image` 都留空 = 不显示壁纸。
+- **`color` 改成别的值会牵动整站配色**：`--background` 是底色、卡片底色（`--surface`）、遮罩渐变的共同来源，全部由它派生，改完是成套的。
+- **整段 `[params.background]` 删掉** = 回到主题内置默认（`themes/kemiao/assets/css/footer.css` 里那套硬编码规则仍在，作兜底），主题可独立分发。
+
+实现：`themes/kemiao/layouts/partials/background-style.html` 读配置渲染成一张独立样式表（Hugo Pipes，指纹化），由 `head.html` 排在 `footer.css` / `site.css` 之后引入；选择器与 footer.css 同构（亮色 `.site-backdrop`、暗色 `html[data-theme=dark] .site-backdrop`），靠「后出现」覆盖。
+
 
 ## 说说数据源（三选一）
 

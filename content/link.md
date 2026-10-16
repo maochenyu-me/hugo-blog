@@ -8,7 +8,7 @@ hero:
   gradient: true
   badges:
     - text: "1 个分组"
-    - text: "3 位友人"
+    - text: "1 位友人"
     - text: "申请友链"
       href: "/addlink/"
 ---

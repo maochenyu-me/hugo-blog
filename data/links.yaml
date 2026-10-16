@@ -3,18 +3,6 @@ groups:
   desc: 这里有 3 个正在发光的小站点。
   badge: 3 sites
   sites:
-  - name: 星の野
-    url: https://blog.byer.ink/
-    avatar: https://p.liiiu.cn/i/2024/08/04/66af2ed96cd7d.webp
-    desc: 我自是年少，韶华倾负
-    siteshot: https://p.liiiu.cn/i/2024/03/22/65fc5ad95d192.png
-    linkPage: ''
-  - name: Akilar
-    url: https://akilar.top/
-    avatar: https://p.liiiu.cn/i/2024/04/06/661170950f7a2.png
-    desc: 欢迎光临糖果屋
-    siteshot: https://p.liiiu.cn/i/2024/03/21/65fc582187f19.png
-    linkPage: ''
   - name: 清羽飞扬
     url: https://blog.liushen.fun/
     avatar: https://blog.liushen.fun/info/avatar.ico

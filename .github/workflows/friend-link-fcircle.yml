@@ -1,0 +1,85 @@
+name: Friend Link Fcircle JSON
+
+# 把 data/links.yaml 转成 static/fcircle.json，供「友链朋友圈」之类的聚合器抓取。
+#
+# 输出格式（对齐 https://blog.liushen.fun/friend.json）：
+#   {"friends": [["站点名称", "友链链接", "友链页链接", "头像地址"], ...]}
+#   - 第 4 项取 avatar（站点头像），不是 siteshot（首页截图）
+#   - 缺友链页时写 null，与参考文件一致
+#
+# 只收录「个人博客」类分组。默认排除：失效暂留 / 博客组织 / 推荐网站 / 网站搭建 / 平时常用
+#   —— 后者是目录站、平台站和后台控制台，聚合器爬不出内容。名单在 tools/friend-link.mjs
+#      的 FCIRCLE_EXCLUDE 里，可用 `fcircle --exclude "A,B"` 覆盖。
+#
+# 文件落在 static/fcircle.json，Hugo 会原样复制到站点根，因此可访问：
+#   https://blog.kemiaosw.top/fcircle.json
+#
+# 注意：GitHub Actions 的 cron 一律按 UTC 计时。18:00 UTC = 次日 02:00 北京时间（UTC+8，无夏令时）。
+#      另外 GitHub 在仓库连续 60 天无活动后会暂停定时任务，届时手动 workflow_dispatch 一次即可恢复。
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: friend-link-sync
+  cancel-in-progress: false
+
+env:
+  FCIRCLE_FILE: static/fcircle.json
+
+jobs:
+  build-fcircle:
+    # 定时与手动触发都不可能被 GITHUB_TOKEN 的提交带起来，所以这里不需要防循环的判断
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate fcircle.json
+        id: gen
+        run: |
+          set -euo pipefail
+          node tools/friend-link.mjs fcircle
+          if git diff --quiet -- "$FCIRCLE_FILE"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "✓ fcircle.json 内容未变，无需提交。"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git --no-pager diff --stat -- "$FCIRCLE_FILE"
+          fi
+
+      - name: Commit and push
+        if: steps.gen.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$FCIRCLE_FILE"
+          git commit -m "chore(friend-link): 刷新 fcircle.json"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
+
+      - name: Re-deploy
+        if: steps.gen.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh workflow run deploy.yml --ref main
+          echo "已请求重新部署，让新的 fcircle.json 上线"

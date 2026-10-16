@@ -10,6 +10,7 @@
  * 子命令：
  *   handle       GitHub Actions 入口：读议题 / 评论 JSON，自动决策并改文件
  *   fix-counts   校正各分组 desc / badge 计数与友链页的「N 位友人」
+ *   fcircle      生成 static/fcircle.json（给「友链朋友圈」聚合器的二维数组）
  *   offline      本地调试：把某个 url 的友链移进「失效暂留」
  *   restore      本地调试：把某个 url 的友链从「失效暂留」迁回原位置
  *   yaml         本地调试：打印某个议题 JSON 对应的 YAML 片段
@@ -232,6 +233,54 @@ export function syncHeroBadges(text, { total, groups }) {
   return text
     .replace(/(text:\s*"?)\d+(\s*位友人"?)/, `$1${total}$2`)
     .replace(/(text:\s*"?)\d+(\s*个分组"?)/, `$1${groups}$2`);
+}
+
+/* ────────────────────────── fcircle.json 生成 ────────────────────────── */
+
+// 只把「个人博客」类分组写进 fcircle.json。这个文件一般喂给「友链朋友圈」聚合器去爬 RSS：
+//   - 「失效暂留」里的站点已经挂了，爬不到东西；
+//   - 「博客组织 / 推荐网站 / 网站搭建 / 平时常用」是目录站、平台站和后台控制台
+//     （GitHub、Gitee、阿里云控制台、百度站长…），根本不是博客，喂进去只会爬出垃圾。
+// 想调整就改这个数组，或用 `fcircle --exclude "分组A,分组B"` 覆盖。
+const FCIRCLE_EXCLUDE = ["失效暂留", "博客组织", "推荐网站", "网站搭建", "平时常用"];
+
+/** 把 links.yaml 转成 friend.json 的二维数组：[[名称, 友链链接, 友链页, 头像], ...] */
+export function buildFcircleRows(text, exclude = FCIRCLE_EXCLUDE) {
+  const { lines } = splitEol(text);
+  const skip = exclude.map((n) => normKey(n)).filter(Boolean);
+  const rows = [];
+  for (const group of parseGroups(lines)) {
+    const groupKey = normKey(group.title);
+    if (skip.some((s) => groupKey.includes(s))) continue;
+
+    const starts = [];
+    for (let i = group.start; i < group.end; i++) if (/^\s{2}- name:/.test(lines[i])) starts.push(i);
+    starts.push(group.end);
+
+    for (let k = 0; k < starts.length - 1; k++) {
+      const fields = { name: "", url: "", avatar: "", linkPage: "" };
+      for (let j = starts[k]; j < starts[k + 1]; j++) {
+        const nm = lines[j].match(/^\s{2}- name:\s*(.*)$/);
+        if (nm) {
+          fields.name = yamlUnquote(nm[1]);
+          continue;
+        }
+        const kv = lines[j].match(/^\s{4}(url|avatar|linkPage|siteshot):\s*(.*)$/);
+        if (kv && kv[1] in fields) fields[kv[1]] = yamlUnquote(kv[2]);
+      }
+      if (!fields.url) continue; // 没有链接的条目对聚合器毫无意义
+      // 与参考格式一致：缺友链页写 null；头像取 avatar，不是封面 siteshot
+      rows.push([fields.name, fields.url, fields.linkPage || null, fields.avatar || null]);
+    }
+  }
+  return rows;
+}
+
+/** 渲染成 JSON：每条一行，便于 git diff 查看增删 */
+export function renderFcircle(rows) {
+  if (rows.length === 0) return '{\n  "friends": []\n}\n';
+  const body = rows.map((r) => `    ${JSON.stringify(r)}`).join(",\n");
+  return `{\n  "friends": [\n${body}\n  ]\n}\n`;
 }
 
 /* ────────────────────────── Issue 表单解析 ────────────────────────── */
@@ -631,6 +680,24 @@ function printCounts(ctx) {
   return info;
 }
 
+function cmdFcircle(opts, ctx) {
+  const outPath = path.resolve(ctx.root, opts.out || "static/fcircle.json");
+  const exclude =
+    typeof opts.exclude === "string" && opts.exclude.trim()
+      ? opts.exclude.split(",").map((s) => s.trim()).filter(Boolean)
+      : FCIRCLE_EXCLUDE;
+  const rows = buildFcircleRows(readText(ctx.linksPath), exclude);
+  const json = renderFcircle(rows);
+  const before = fs.existsSync(outPath) ? readText(outPath) : null;
+  const changed = before !== json;
+  if (changed) writeText(outPath, json);
+  process.stdout.write(
+    `fcircle.json：${rows.length} 条友链，${changed ? "内容有变化，已写入" : "内容无变化，未改动"} → ${path.relative(ctx.root, outPath) || outPath}\n`,
+  );
+  process.stdout.write(`已排除的分组：${exclude.join(" / ")}\n`);
+  return rows;
+}
+
 function main() {
   const opts = parseArgv(process.argv.slice(2));
   const command = opts._[0] || "show";
@@ -649,6 +716,10 @@ function main() {
     const stat = commitChanges(ctx, syncGroupCounts(readText(ctx.linksPath)));
     printCounts(ctx);
     process.stdout.write(stat.changed ? "已写回文件。\n" : "计数本来就是对的，文件无变化。\n");
+    return;
+  }
+  if (command === "fcircle") {
+    cmdFcircle(opts, ctx);
     return;
   }
   if (command === "yaml") {

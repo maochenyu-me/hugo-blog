@@ -44,9 +44,19 @@ jobs:
           extended: true
 
       - name: Build site and pagefind index
-        run: node tools/build.mjs --prod
         env:
-          HUGO_BASEURL: ${{ vars.BASE_URL }}
+          # 注意：这里不能直接把 vars.BASE_URL 赋给 HUGO_BASEURL。
+          # 变量未配置时 Hugo 会收到空字符串并覆盖 hugo.toml 的 baseURL，
+          # 导致 canonical/og:url/sitemap 变成相对路径。
+          BASE_URL_VAR: ${{ vars.BASE_URL }}
+        run: |
+          if [ -n "${BASE_URL_VAR:-}" ]; then
+            echo "使用 BASE_URL 变量：$BASE_URL_VAR"
+            export HUGO_BASEURL="$BASE_URL_VAR"
+          else
+            echo "BASE_URL 变量未配置，回退到 hugo.toml 的 baseURL"
+          fi
+          node tools/build.mjs --prod
 
       - name: Ensure Cloudflare Pages project exists
         env:

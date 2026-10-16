@@ -1,25 +1,27 @@
 name: Friend Link Sync
 
-# 三条直线，没有别的分支：
+# 三条直线，一个动作只跑一次工作流：
 #
-#   ① 收录（半自动）：用户按「友链申请」模板提交议题 → 自动打上「友链申请」标签
+#   ① 收录：用户按「友链申请」模板提交议题（表单原生打上「友链申请」标签）
 #      → 你关闭议题 → 机器人把字段转成 YAML 代码块贴在评论里 → 你自己复制进 data/links.yaml
+#      触发：issues.closed
 #
-#   ② 下线（全自动）：你给议题打上「失效」标签并重新打开议题
-#      → 工作流把该友链移进「😭 失效暂留」分组，并在条目上方写一行 `# 原位置：...`
-#      → 自动提交并部署
+#   ② 下线：你给议题打上「失效」标签 → 移进「😭 失效暂留」并在条目上方写 `# 原位置：...`
+#      触发：issues.labeled        —— 不需要再重开议题
 #
-#   ③ 恢复（全自动）：用户评论告诉你站点恢复了 → 你摘掉「失效」标签并关闭议题
-#      → 工作流把它从「失效暂留」迁回注释里记录的原位置 → 自动提交并部署
+#   ③ 恢复：你摘掉「失效」标签 → 从「失效暂留」迁回原位置
+#      触发：issues.unlabeled      —— 不需要再关闭议题
 #
-# 标签→重开 / 摘标签→关闭 这两种操作的先后顺序都兼容，重复触发幂等。
+# 因此监听事件只有 closed / labeled / unlabeled 三个，一个动作恰好对应一次运行。
+# （旧版监听 opened/reopened，导致申请一次要跑 3 次工作流，还出现一次取消。）
 #
 # 注意：用 GITHUB_TOKEN 推送的 commit 不会再触发 deploy.yml 的 push 事件，
-#      因此这里提交完成后显式用 workflow_dispatch 拉起部署。
+#      所以这里提交完成后显式用 workflow_dispatch 拉起部署。
 
 on:
   issues:
-    types: [opened, closed, reopened, labeled, unlabeled]
+    types: [closed, labeled, unlabeled]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -37,13 +39,29 @@ env:
   LABEL_DEAD: 失效
 
 jobs:
+  # 一次性引导：部署后到 Actions 手动 Run 一次本工作流，把两个受管标签建出来。
+  # 标签存在后，Issue 表单就能在创建议题时原生打上「友链申请」，
+  # 于是不需要监听 opened、也不需要在工作流里再加标签（那会额外触发一次 labeled 运行）。
+  labels:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create managed labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh label create "$LABEL_APPLY" --color 0E8A16 --description "通过「友链申请」模板提交的议题" >/dev/null 2>&1 || true
+          gh label create "$LABEL_DEAD"  --color B60205 --description "站点失效，工作流会把它移入失效暂留分组" >/dev/null 2>&1 || true
+          echo "已确保标签存在：$LABEL_APPLY / $LABEL_DEAD"
+
   sync:
-    # 只处理跟友链相关的议题
-    if: |
+    if: github.event_name != 'workflow_dispatch' && (
       startsWith(github.event.issue.title, '[友链申请]') ||
       contains(github.event.issue.labels.*.name, '友链申请') ||
       contains(github.event.issue.labels.*.name, '失效') ||
-      contains(github.event.issue.body, '### 站点地址')
+      contains(github.event.issue.body, '### 站点地址'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -58,30 +76,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-
-      - name: Ensure labels
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          gh label create "$LABEL_APPLY" --color 0E8A16 --description "通过「友链申请」模板提交的议题" >/dev/null 2>&1 || true
-          gh label create "$LABEL_DEAD"  --color B60205 --description "站点失效，工作流会把它移入失效暂留分组" >/dev/null 2>&1 || true
-          echo "标签就绪：$LABEL_APPLY / $LABEL_DEAD"
-
-      - name: Auto label friend-link issue
-        if: github.event.action == 'opened'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: |
-          set -euo pipefail
-          if ! printf '%s' "$ISSUE_BODY" | grep -q '### 站点地址'; then
-            echo "不是友链申请模板提交的议题，跳过自动打标签。"
-            exit 0
-          fi
-          gh issue edit "$ISSUE_NUMBER" --add-label "$LABEL_APPLY"
-          echo "已为 #$ISSUE_NUMBER 添加标签「$LABEL_APPLY」"
 
       - name: Collect issue context
         env:

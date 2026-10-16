@@ -601,8 +601,8 @@ function cmdHandle(opts) {
   if (site.url) current = findSiteAnywhere(splitEol(readText(ctx.linksPath)).lines, site.url);
   const inGraveyard = current ? isGraveyard(current.groupTitle) : false;
 
-  // ① 下线：议题打开 + 带「失效」标签
-  if (state === "open" && hasBadLabel) {
+  // ① 下线：带上「失效」标签就立即下线 —— 议题开着关着都行，不需要再重开
+  if (hasBadLabel) {
     if (!current) {
       result.summary = "该议题对应的友链不在 data/links.yaml 中，跳过下线。";
       return finish();
@@ -619,13 +619,13 @@ function cmdHandle(opts) {
     result.comment = [
       `> ⚠️ 已把「${outcome.name}」从「${outcome.from}」移入「${outcome.to}」。`,
       ">",
-      "> 站点恢复后，摘掉 `失效` 标签并关闭本议题，我会把它放回原来的位置。",
+      "> 站点恢复后，摘掉 `失效` 标签即可，我会把它放回原来的位置。",
     ].join("\n");
     return finish();
   }
 
-  // ② 恢复：议题已关闭 + 没有「失效」标签 + 该友链正在「失效暂留」里
-  if (state === "closed" && !hasBadLabel && inGraveyard) {
+  // ② 恢复：摘掉「失效」标签就立即迁回原位置 —— 不需要再关闭议题
+  if (!hasBadLabel && inGraveyard) {
     const outcome = doRestore(ctx, site.url);
     if (!outcome.ok) return fail("恢复失败", outcome.message);
     result.action = "restore";
@@ -637,8 +637,8 @@ function cmdHandle(opts) {
     return finish();
   }
 
-  // ③ 收录：议题已关闭 + 没有「失效」标签 + 还没输出过 YAML
-  if (state === "closed" && !hasBadLabel && !inGraveyard && !hasYamlMarker(comments)) {
+  // ③ 收录：走到这里必然「没有失效标签且不在失效暂留」，所以只看议题是否被关闭
+  if (state === "closed" && !hasYamlMarker(comments)) {
     if (!site.url || !site.name) {
       result.summary = "议题已关闭，但正文里解析不到站点名称 / 站点地址，跳过。";
       return finish();
@@ -649,8 +649,7 @@ function cmdHandle(opts) {
     return finish();
   }
 
-  result.summary =
-    state === "closed" ? "议题已关闭，当前状态无需改动友链数据。" : "议题未关闭或未带「失效」标签，无需改动友链数据。";
+  result.summary = "当前状态无需改动友链数据。";
   return finish();
 }
 

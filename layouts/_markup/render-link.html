@@ -1,0 +1,27 @@
+{{- /* 外链改写（源站 safego 集成 1:1）：
+     ① 带标题的站外链接 [标题](url "描述") → link-card 站外引用卡（头像取目标站 favicon）
+     ② 普通站外链接 → /safego/?u=<base64>；站内链接原样 */}}
+{{- $dest := .Destination -}}
+{{- $parsed := urls.Parse $dest -}}
+{{- $siteHost := urls.Parse site.BaseURL -}}
+{{- $isExternal := and (or (eq $parsed.Scheme "http") (eq $parsed.Scheme "https")) $parsed.Host (ne $parsed.Host $siteHost.Host) -}}
+{{- if and $isExternal .Title -}}
+  {{- $encoded := strings.TrimRight "=" (base64Encode $dest) -}}
+  {{- $favicon := printf "https://favicon.im/%s?larger=true" $parsed.Host -}}
+  <a href="{{ printf "/safego/?u=%s" $encoded }}" class="link-card app-card" target="_blank" rel="external nofollow noopener noreferrer">
+    <span class="link-card-tip">站外引用 · 引用站外地址，不保证站点的可用性和安全性</span>
+    <span class="link-card-body">
+      <span class="link-card-avatar" style="background-image:url('{{ $favicon }}')"></span>
+      <span class="link-card-content">
+        <span class="link-card-title">{{ .Text }}</span>
+        <span class="link-card-desc">{{ .Title }}</span>
+      </span>
+      <span class="link-card-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </span>
+  </a>
+{{- else if $isExternal -}}
+  {{- $encoded := strings.TrimRight "=" (base64Encode $dest) -}}
+  <a href="{{ printf "/safego/?u=%s" $encoded }}" target="_blank" rel="external nofollow noopener noreferrer">{{ .Text }}</a>
+{{- else -}}
+  <a href="{{ $dest }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if and (hasPrefix $dest "http") (ne $parsed.Host $siteHost.Host) }} target="_blank" rel="external nofollow noopener noreferrer"{{ end }}>{{ .Text }}</a>
+{{- end -}}

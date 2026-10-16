@@ -1,0 +1,136 @@
+- title: 😎 生产力
+  desc: 提升自己生产效率的硬件设备，手感观感为第一位
+  badge: 5 件
+  items:
+  - name: HP OmniBook 7
+    image: https://p.liiiu.cn/i/2026/03/11/69b04d3000137.webp
+    spec: U7-225H 32GB/2TB
+    desc: 自己买的第一台轻薄本，比之前的轻薄很多，更方便使用，屏幕显示也很喜欢！
+    url: https://www.hpstore.cn/omni-pc-range
+  - name: 16寸便携屏
+    image: https://p.liiiu.cn/i/2025/02/16/67b1eefc5b54b.webp
+    spec: 2.5K 144Hz 100%sRGB
+    desc: 自己组的一台便携屏，屏幕规格为MNG007DA1-1，配置与我电脑对齐，和电脑并排放观感极佳。
+    url: https://www.panelook.cn/MNG007DA1-1_CSOT_16.0_LCM_overview_cn_50488.html
+  - name: Redmi K90 ProMax
+    image: https://p.liiiu.cn/i/2025/11/02/69076580a3bad.webp
+    spec: 骁龙8Elite-5th 16/512GB
+    desc: 第一个自己的钱买的手机，十分满意，音质无敌，质感出乎意外，配置顶尖。
+    url: https://www.mi.com/prod/redmi-k90-pro-max
+  - name: LM84 客制化键盘
+    image: https://p.liiiu.cn/i/2024/08/04/66ae6100b38c4.webp
+    spec: 三模 热插拔 灰木轴/拾光白轴
+    desc: 自己换了几乎所有，将这个紧凑型键盘打造成了我喜欢的样子，很舒服，敲起来很带感。
+    url: https://item.jd.com/100012980718.html
+  - name: 迈从G3 V2
+    image: https://p.liiiu.cn/i/2025/11/02/6907661b21277.webp
+    spec: 无线蓝牙 自定义宏/高采样率
+    desc: 手感很轻，很适合打游戏，但是我并不打游戏；小手友好，完美贴合我个人使用需求。
+    url: https://www.maicong.cn/detail?link_product=077ac4a5aa209fb89696f3bed8cdf39b
+- title: 🦮 出行
+  desc: 用来出行的实物及设备，便携性为第一位
+  badge: 6 件
+  items:
+  - name: Xiaomi band 9 Pro
+    image: https://p.liiiu.cn/i/2025/11/02/690766fc8d7e2.webp
+    spec: 银色
+    desc: 轻便，屏幕更大，带着很舒服，绑定了NFC卡片之后，坐地铁再也不用掏手机了！
+    url: https://www.mi.com/prod/xiaomi-shouhuan-9-pro
+  - name: C135W氮化镓适配器
+    image: https://p.liiiu.cn/i/2025/03/23/67deec590159d.webp
+    spec: PD135W 便携
+    desc: 很轻松，比原装的砖头比起来很舒服了，轻松便携，带一个插头可以给多设备充电。
+    url: https://item.lenovo.com.cn/product/1020739.html
+  - name: 小米充电宝-Lite
+    image: https://p.liiiu.cn/i/2025/02/16/67b1f1176277d.webp
+    spec: 10000mAh 22.5W
+    desc: 一款轻便小巧的充电宝，虽然体积比较小，但是电量在外够用，非常好看，比之前的铁壳轻一些。
+    url: https://www.mi.com/shop/buy/detail?product_id=18376&amp;cfrom=search
+  - name: 联想异能者N500
+    image: https://p.liiiu.cn/i/2024/08/04/66af077a6f4aa.webp
+    spec: 6D按键 四档DPI
+    desc: 非常轻，左右键都很静音，但是侧键点击有点沉重，但是非常便携，实为出行办公良品。
+    url: https://item.lenovo.com.cn/product/1034244.html
+  - name: Redmi buds 4 活力板
+    image: https://p.liiiu.cn/i/2024/08/04/66af087ed43b7.webp
+    spec: 12MM动圈 蓝牙5.3
+    desc: 价格十分便宜，耳机很轻，单只3.6g，并且音质属于同价位较高水准，是小米的产品，美观
+    url: https://www.mi.com/shop/buy/detail?product_id=18568
+  - name: 屏幕便携支架
+    image: https://p.liiiu.cn/i/2025/02/16/67b1f19fd50b8.webp
+    spec: VESA
+    desc: 便携屏幕支架，可折叠，非常方便携带，适合出行或者寒暑假回家时带着。价格不贵。
+    url: https://www.bilibili.com/video/BV1PH4y117e7/
+- title: ⛄ 智能家居
+  desc: 在家中用于构建智能家居的电子设备，用于提升网络水平
+  badge: 4 件
+  items:
+  - name: 锐捷X32Pro
+    image: https://p.liiiu.cn/i/2024/08/04/66af09a3de006.webp
+    spec: 千兆路由 Mesh组网
+    desc: 虽然说可能比较老，但是信号完全够用，支持最高3200Mbps速率，信号覆盖度强，对我来说绰绰有余。
+    url: https://mall.ruijie.com.cn/product/437613999462818048.html
+  - name: H3C NX30 Pro
+    image: https://p.liiiu.cn/i/2025/02/16/67b1f2db395f4.webp
+    spec: 千兆路由 Mesh组网
+    desc: 功能多，速度快，支持协议多，适合家用，放在公司亦是合适，信号覆盖面积比较广。
+    url: https://www.h3c.com/cn/Products_And_Solution/IntelligentTerminalProducts/Star_Products/Home_Network/N/NX30_Pro/
+  - name: Xiaomi CR6608
+    image: https://p.liiiu.cn/i/2025/11/02/690767e4c04ef.webp
+    spec: 千兆路由
+    desc: 功能多，速度快，支持协议多，速度相对较慢，信号也不咋地，但是很便宜。
+    url: https://mao.fan/Router/telecom/CR6608
+  - name: 小爱音箱 Play版
+    image: https://p.liiiu.cn/i/2024/08/04/66af0a4889e5c.webp
+    spec: 智能控制 语音通话
+    desc: 控制不了其他品牌空调，只能当作闹钟用，但是免费的，用来当个蓝牙音箱还是不错的，音质正常水准。
+    url: https://www.mi.com/aispeaker-play
+- title: ❄ 曾经
+  desc: 之前用过的一些设备记录，现在已经无法使用或已有替代品不再使用
+  badge: 9 件
+  items:
+  - name: REGION R9000P 2021H
+    image: https://p.liiiu.cn/i/2024/08/04/66ae60ed6d31c.webp
+    spec: R7-5800H 16GB/1.5TB
+    desc: 屏幕显示效果好、色彩准确、对比度强、性能强劲、续航良好，能跑算法，就是死沉死沉的……
+    url: https://item.lenovo.com.cn/product/1013150.html
+  - name: Xiaomi 10S 蓝色
+    image: https://p.liiiu.cn/i/2025/02/16/67b1eac4820d7.webp
+    spec: 骁龙870 8GB/256GB
+    desc: 小米音质最好的手机，哈曼卡顿双扬声器，颜值在线，充电电池性能够用，功能多，完美符合我要求。
+    url: https://www.mi.com/mi10s
+  - name: Readmi K40 Gaming 白
+    image: https://p.liiiu.cn/i/2024/08/04/66ae60fa399ef.webp
+    spec: 天玑1200 12GB/128GB
+    desc: 红米第一个游戏手机，也是我的第一个手机，外观炫酷，除了打游戏啥都能干，就是肩键有点多余。
+    url: https://www.mi.com/redmik40gaming
+  - name: 小米3
+    image: https://p.liiiu.cn/i/2024/08/04/66af0ab4e5462.webp
+    spec: 骁龙800 2GB/64GB
+    desc: 第一台手机，当时感觉很稀奇，可惜是3G网，再加上屏幕极为脆弱，最终不幸因为屏幕爆碎而退役。
+    url: https://www.mi.com/mi3
+  - name: 魅蓝 Note 5
+    image: https://p.liiiu.cn/i/2024/08/04/66af0b93c796b.webp
+    spec: Helio P10 3GB/32GB
+    desc: 家里人换下来的，迄今为止还能用，非常喜欢的外观，P10处理器在当时也不算太落后，整体能打。
+    url: https://baike.baidu.com/item/%E9%AD%85%E8%93%9Dnote5/20205912
+  - name: Xiaomi air 2 se
+    image: https://p.liiiu.cn/i/2024/08/04/66af0c289849f.webp
+    spec: IDHC 半入耳式
+    desc: 京东70无门槛券，到手20，外观比较大，比较臃肿，半入耳式带着可能不算稳定但是很舒服，音质较好
+    url: https://cdn.cnbj1.fds.api.mi-img.com/ics-resources/articles/63be5a60aba6bc20c6275e46.html
+  - name: 小米充电宝
+    image: https://p.liiiu.cn/i/2024/08/04/66ae62ee668c1.webp
+    spec: 10000mAh
+    desc: 一款轻便小巧的充电宝，虽然体积比较小，但是电量在外够用，非常好看。
+    url: https://www.mi.com/wirelesspb
+  - name: Xiaomi band 7 NFC
+    image: https://p.liiiu.cn/i/2024/08/04/66ae61e1abcb8.webp
+    spec: NFC版
+    desc: 轻便，带着很舒服，绑定了NFC卡片之后，坐地铁再也不用掏手机了！
+    url: https://www.mi.com/shouhuan7
+  - name: 机械师M7
+    image: https://p.liiiu.cn/i/2024/08/04/66af066c4dafc.webp
+    spec: 无线蓝牙 自定义宏/高采样率
+    desc: 手感很重，很适合打游戏，但是我并不打游戏；有点大，需要伸手才能碰到前进按键，办公笨重。
+    url: https://www.machenike.com/showInfo/322.html

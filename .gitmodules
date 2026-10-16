@@ -1,0 +1,3 @@
+[submodule "themes/kemiao"]
+    path = themes/kemiao
+    url = https://github.com/maochenyu-me/hugo-theme-kemiao.git

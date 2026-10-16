@@ -1,0 +1,91 @@
+# 图标清单（FontAwesome 7.2.0 Free）· 草案 v1
+# 来源：2026-10-06 扫描源站首页 / 文章页 / 文章通览 / 404 四类页面全部 fa-* 类名
+# 覆盖页面：/ /posts/{slug}/ /posts/ /404.html —— 其余页面（archives/tags/categories/
+# link/comment/shuoshuo/about 等）在对应阶段开工前补充扫描并在此追加
+# 格式：图标名: [风格前缀, 使用位置]
+# 规则：同一语义位置必须用源站同款图标；Pro 专属缺失时选最接近 Free 替代并在 README 登记
+
+nav_search: [solid, 头部搜索按钮]
+nav_console: [solid, 中控台触发按钮 fa-bars-progress]
+chevron_down: [solid, 导航下拉分组展开箭头]
+dropdown_caret: [solid, 中控台/下拉通用箭头]
+
+# 导航分组（移动抽屉每链接配图标）
+nav_home: [solid, 导航-主页入口]
+nav_archive: [solid, 导航-时光卷轴 fa-box-archive]
+nav_tag: [solid, 导航-文章标签 fa-hashtag]
+nav_folder: [solid, 导航-文章分类 fa-folder]
+nav_posts: [solid, 导航-文章通览 fa-bars-staggered]
+nav_link: [solid, 导航-友链展示 fa-link]
+nav_comment: [regular, 导航-留言/评论 fa-comment-dots]
+nav_rss: [solid, 导航-订阅本站]
+nav_user: [solid, 导航-站长资料 fa-user-astronaut]
+nav_desktop: [solid, 导航-我的设备 fa-desktop]
+nav_heart: [solid, 导航-支持作者 fa-heart]
+nav_camera: [solid, 导航-个人相册]
+nav_code: [solid, 导航-代码片段]
+nav_music: [solid, 导航-音乐拾取/音乐胶囊]
+nav_chart: [solid, 导航-流量数据 fa-chart-simple / fa-chart-line]
+nav_info: [solid, 中控台提示 fa-circle-info]
+nav_pencil: [solid, 导航-随笔 fa-pen-nib]
+nav_users: [solid, 导航-朋友动态 fa-users]
+nav_broom: [solid, 中控台清理 fa-broom]
+nav_fingerprint: [solid, 中控台身份项]
+nav_house: [regular+solid, 首页面包屑/导航-主页（两种风格并存，按源站位置使用）]
+
+# 首页 Hero 与侧栏
+hero_mail: [solid, 社交图标-发邮件 fa-envelope]
+hero_qq: [brands, 社交图标-QQ]
+hero_github: [brands, 社交图标-GitHub]
+hero_rss: [solid, 社交图标-RSS]
+card_calendar: [regular, 卡片日期 fa-calendar-days]
+card_folder: [solid, 分类 chip fa-folder]
+card_tag: [solid, 标签 fa-hashtag]
+card_folder_open: [solid, 侧栏网站信息]
+
+# 文章页
+breadcrumb_back: [solid, cd.. 返回按钮 fa-chevron-left]
+meta_eye: [regular, 阅读量]
+meta_clock: [regular, 阅读时长 fa-clock]
+meta_calendar_plus: [regular, 更新时间]
+ai_summary: [solid, AI 摘要卡 fa-wand-magic-sparkles]
+share_x: [brands, 分享-X]
+share_whatsapp: [brands, 分享-WhatsApp]
+share_telegram: [brands, 分享-Telegram]
+share_pinterest: [brands, 分享-Pinterest]
+share_facebook: [brands, 分享-Facebook]
+prev_arrow: [solid, 上一篇 fa-arrow-left]
+next_arrow: [solid, 下一篇 fa-arrow-right]
+
+# 中控台 6 控制项（已核实 aria/文案）
+ctrl_music: [solid, 音乐胶囊 fa-music]
+ctrl_recent_comments: [regular, 最近评论 fa-comments]
+ctrl_theme_auto: [solid, 亮暗-auto fa-circle-half-stroke]
+ctrl_theme_light: [regular, 亮暗-light fa-sun]
+ctrl_theme_dark: [regular, 亮暗-dark fa-moon]
+ctrl_fullscreen_enter: [solid, 全屏-进入 fa-expand]
+ctrl_fullscreen_exit: [solid, 全屏-退出 fa-compress]
+ctrl_context_menu: [solid, 右键菜单 fa-computer-mouse]
+ctrl_yozai: [brands, 悠哉文楷 fa-fonticons-fi]
+ctrl_search: [brands, 搜索-Algolia fa-algolia]
+ctrl_play: [regular, 音乐播放 fa-circle-play]
+ctrl_history: [solid, 发展历程 fa-clock-rotate-left]
+ctrl_book: [solid, 中控台文档项 fa-book-open]
+ctrl_mug: [solid, 中控台支持项 fa-mug-hot]
+
+# 搜索弹窗
+search_glass: [solid, 搜索输入框 fa-magnifying-glass]
+modal_close: [solid, 关闭按钮 fa-xmark]
+
+# 页脚
+footer_copyright: [regular, 版权 fa-copyright]
+footer_envelope: [solid, 联系-邮件]
+footer_qq: [brands, 联系-QQ]
+footer_github: [brands, 联系-GitHub]
+
+# 通用
+chevron_left: [solid, 返回/翻页 fa-angles-left]
+arrow_up: [solid, 返回顶部 fa-arrow-up]
+arrow_right: [solid, 通用右箭头]
+list_ul: [solid, 列表标记 fa-list-ul]
+location_dot: [solid, 站长资料位置项]

@@ -1,0 +1,80 @@
+# 头部导航（桌面下拉 + 移动抽屉）· 与源站 DOM 一一对应
+# trigger_icon: 移动抽屉分组图标；links[].icon: 移动抽屉链接图标（源站实际类名，含风格前缀）
+- name: 导航
+  trigger_icon: "fa-solid fa-house"
+  links:
+    - name: 个人主页
+      url: "https://www.liushen.fun/"
+      external: true
+      icon: "fa-solid fa-house"
+    - name: 个人相册
+      url: "https://xc.liushen.fun/"
+      external: true
+      icon: "fa-solid fa-camera"
+
+- name: 整理
+  trigger_icon: "fa-solid fa-folder"
+  links:
+    - name: 时光卷轴
+      url: "/archives/"
+      icon: "fa-solid fa-box-archive"
+    - name: 文章标签
+      url: "/tags/"
+      icon: "fa-solid fa-hashtag"
+    - name: 文章分类
+      url: "/categories/"
+      icon: "fa-solid fa-folder"
+    - name: 文章通览
+      url: "/posts/"
+      icon: "fa-solid fa-chart-simple"
+
+- name: 友人
+  trigger_icon: "fa-solid fa-users"
+  links:
+    - name: 友链展示
+      url: "/link/"
+      icon: "fa-solid fa-link"
+    - name: 友链申请
+      url: "/addlink/"
+      icon: "fa-solid fa-envelope"
+    - name: 朋友动态
+      url: "/fcircle/"
+      icon: "fa-solid fa-rss"
+
+- name: 留言
+  trigger_icon: "fa-regular fa-comment-dots"
+  links:
+    - name: 留言白板
+      url: "/comment/"
+      icon: "fa-regular fa-comment-dots"
+    - name: 提笔摘星
+      url: "https://mm.liushen.fun/"
+      external: true
+      icon: "fa-solid fa-pen-nib"
+
+- name: 分享
+  trigger_icon: "fa-solid fa-share-nodes"
+  links:
+    - name: 代码片段
+      url: "https://gist.liushen.fun/"
+      external: true
+      icon: "fa-solid fa-code"
+    - name: 日常说说
+      url: "/shuoshuo/"
+      icon: "fa-regular fa-comment-dots"
+    - name: 订阅本站
+      url: "/subscribe/"
+      icon: "fa-solid fa-rss"
+
+- name: 关于
+  trigger_icon: "fa-solid fa-circle-info"
+  links:
+    - name: 站长资料
+      url: "/about/"
+      icon: "fa-solid fa-circle-info"
+    - name: 我的设备
+      url: "/devices/"
+      icon: "fa-solid fa-desktop"
+    - name: 支持作者
+      url: "/rewards/"
+      icon: "fa-solid fa-heart"

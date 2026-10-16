@@ -1,0 +1,273 @@
+baseURL = 'https://blog.kemiaosw.top/'
+locale = 'zh-cn'
+defaultContentLanguage = 'zh-cn'
+title = "LiuShen's Blog - 清羽飞扬"
+hasCJKLanguage = true
+# 主题不用 theme = 'kemiao' 挂载，改为手动 mounts：主题 data/ 不参与挂载，
+# 数据只认根目录 data/（博客自有配置），从根源消除数组型 YAML 的 overridden 警告
+[module]
+  # 项目自身目录（声明 mounts 后默认挂载规则失效，需完整列出；放最前 = 高优先级，同名文件项目赢）
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'i18n'
+    target = 'i18n'
+  [[module.mounts]]
+    source = 'archetypes'
+    target = 'archetypes'
+  # 主题目录（data 除外；声明在后 = 低优先级）
+  [[module.mounts]]
+    source = 'themes/kemiao/layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'themes/kemiao/assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'themes/kemiao/static'
+    target = 'static'
+  [[module.mounts]]
+    source = 'themes/kemiao/i18n'
+    target = 'i18n'
+  [[module.mounts]]
+    source = 'themes/kemiao/archetypes'
+    target = 'archetypes'
+# 源站 RSS 路径为 /atom.xml；MANIFEST 输出 PWA 应用清单到 /manifest.json
+[outputs]
+  home = ['HTML', 'RSS', 'MANIFEST']
+[mediaTypes]
+  [mediaTypes.'application/manifest+json']
+    suffixes = ['json']
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = 'application/rss'
+    baseName = 'atom'
+  # baseName 留空 → 输出 /manifest.json（模板 layouts/manifest.json）
+  [outputFormats.MANIFEST]
+    mediaType = 'application/manifest+json'
+    baseName = 'manifest'
+    isPlainText = true
+    notAlternative = true
+# 分类法：分类 slug 沿用源站英文（website / daily-share / life-snippets / learning）
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+# 说说正文自动摘要长度（超过则列表卡截断、给详情页链接）
+summaryLength = 120
+[permalinks]
+  posts = '/posts/:slug/'
+[markup]
+  [markup.highlight]
+    # Chroma 复刻 Shiki 观感：双主题 + 无行号
+    noClasses = false
+    lineNos = false
+    codeFences = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      [markup.goldmark.parser.attribute]
+        block = true
+
+[params]
+  # 站点信息（占位，与源站一致；正式使用时替换）
+  description = '清羽飞扬的技术博客 |提供建站教程、编程实战笔记、生活点滴，个人经验，融合技术开发与人文思考，定期更新深度指南与创意灵感，给大家提供更多帮助。'
+  keywords = ['清羽飞扬', '博客', '建站教程', '编程', '技术博客', 'LiuShen']
+  author = 'LiuShen'
+  avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+  ogImage = '/og.webp'
+  # 主题三档 light/dark/auto，localStorage 持久化，head 内联脚本防白闪
+  defaultTheme = 'auto'
+  # 页脚运行计时起点
+  runtimeStart = '2021-12-12T01:27:36+08:00'
+  # 版权与备案（保留源站占位）
+  copyrightStartYear = 2021
+  beianIcp = '陕ICP备2024028531号-2'
+  beianPolice = '陕公网安备61011602000637号'
+  beianPoliceCode = '61011602000637'
+  # 页脚技术署名：仅保留 Hugo（克喵 2026-10-06 拍板）
+  footerCredit = 'Hugo'
+
+  # 图标加载：cdn 与源站同 CDN；local 经 Hugo Pipes 自托管（生产推荐）
+  [params.icons]
+    provider = 'local'
+    cdn = 'https://jsd.liiiu.cn/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css'
+  # 搜索双后端：pagefind | algolia（algolia 凭据为源站示例，切 provider 即换后端）
+  [params.search]
+    provider = 'pagefind'
+    [params.search.algolia]
+      appId = '7IX3UBC6JW'
+      apiKey = '4ac2846352e499675081f1277fb961c1'
+      indexName = 'My Blog'
+      hitsPerPage = 5
+    [params.search.pagefind]
+      basePath = '/pagefind/'
+      hitsPerPage = 5
+  # 评论多后端：artalk | twikoo | ecoku（provider 切换即换评论区）
+  [params.comments]
+    provider = 'ecoku'
+    [params.comments.artalk]
+      server = 'https://artalk.518339.xyz'
+      site = 'Hugo-kemiao-blog'
+    [params.comments.twikoo]
+      envId = ''
+    # Ecoku：自托管评论，provider 切 ecoku 时启用
+    # 官方说明：https://ecoku.zsh.moe/integration/html
+    [params.comments.ecoku]
+      serverUrl = 'https://ecoku.518339.xyz'
+      siteId = 'blog-hugo-kemiao'
+      pageSize = 10
+      theme = 'auto'
+      i18n = 'zh-CN'
+      # 可选：自托管加载器，默认 {serverUrl}/client/ecoku-loader.js
+      # jsUrl = ''
+      # 可选：替换默认样式（见 https://ecoku.zsh.moe/integration/custom-css）
+      # cssUrl = ''
+  # 文章页
+  [params.article]
+    [params.article.aiSummary]
+      brand = '克喵のAI摘要'
+      model = 'KIMI-K2.5'
+    [params.article.share]
+      whatsapp = true
+      facebook = true
+      x = true
+      telegram = true
+      pinterest = true
+      email = true
+  # 字体（正文悠哉体走源站分片 CDN）
+  [params.fonts]
+    yozaiCss = 'https://jsd.liiiu.cn/gh/willow-god/Sharding-fonts/Yozai-Medium/result.min.css'
+  # 统计（默认关闭）
+  [params.umami]
+    enable = false
+    src = ''
+    websiteId = ''
+    domains = ''
+  # 访问统计：soxft/busuanzi 自部署版（https://github.com/soxft/busuanzi）
+  # 脚本 POST {origin}/api 并填充 #busuanzi_{site_pv,site_uv,page_pv,page_uv}（默认前缀即 busuanzi）
+  # 文章页 PV/UV 在 post-header.html；站点级 UV/PV 在首页 webinfo-card.html
+  [params.busuanzi]
+    enable = true
+    src = 'https://bsz.518339.xyz/js'
+  # 音乐胶囊（APlayer + MetingJS，1:1 源站；不需要时 enable = false）
+  [params.musicCapsule]
+    enable = true
+    id = '13597135963'
+    server = 'netease'
+    type = 'playlist'
+    volume = '0.8'
+    api = 'https://met.liiiu.cn/meting/api?server=:server&type=:type&id=:id&r=:r'
+    aplayerCss = 'https://jsd.liiiu.cn/npm/aplayer@1.10.1/dist/APlayer.min.css'
+    aplayerScript = 'https://jsd.liiiu.cn/npm/aplayer@1.10.1/dist/APlayer.min.js'
+    metingScript = 'https://jsd.liiiu.cn/npm/meting@2.0.1/dist/Meting.min.js'
+  # 安全跳转中转页（外链改写 /safego/?u=<base64>）
+  [params.safego]
+    param = 'u'
+    countdown = 10
+    protocols = 'http,https,thunder,qqdl,ed2k,flashget,qbrowser,ftp,rtsp,mms'
+
+  # PWA / favicon / 社交分享图（资产由 tools/gen-pwa-assets.py 生成到主题 static/）
+  # enable = false 时只输出 /favicon.ico，其余 PWA 引用一律不渲染（避免 404）
+  [params.pwa]
+    enable = true
+    shortName = '清羽飞扬'
+    themeColor = '#242424'
+    backgroundColor = '#242424'
+    display = 'standalone'
+    startUrl = '/'
+
+  # 首页 Hero（阶段②）
+  [params.hero]
+    title = "LiuShen's Blog"
+    terminalPrefix = '~'
+    terminalPath = '/hello-world'
+    terminalSuffix = '$'
+    avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+    authorLabel = '作者'
+    authorName = 'LiuShen'
+    authorUrl = 'https://www.liushen.fun/'
+    # 社交图标（顺序即渲染顺序）
+    [[params.hero.socials]]
+      icon = 'fa-solid fa-envelope'
+      title = '发送邮件给 LiuShen'
+      url = 'mailto:01@liushen.fun'
+    [[params.hero.socials]]
+      icon = 'fa-brands fa-qq'
+      title = '通过 QQ 联系 LiuShen'
+      url = 'http://wpa.qq.com/msgrd?v=3&uin=3162475700&site=qq&menu=yes'
+    [[params.hero.socials]]
+      icon = 'fa-brands fa-github'
+      title = 'LiuShen 的 GitHub'
+      url = 'https://github.com/willow-god'
+    [[params.hero.socials]]
+      icon = 'fa-solid fa-rss'
+      title = 'RSS Feed'
+      url = '/atom.xml'
+      accent = true
+  # 首页侧栏
+  [params.sidebar]
+    postPerIndex = 8
+    [params.sidebar.welcome]
+      enable = true
+    [params.sidebar.patron]
+      enable = true
+      moreLabel = '能量榜'
+      moreUrl = '/rewards/'
+    [params.sidebar.traffic]
+      enable = true
+    [params.sidebar.webinfo]
+      enable = true
+
+  # 说说三数据源（source 三选一，其余源不参与渲染）：
+  #   local = content/shuoshuo/ 本地 md，构建期渲染
+  #   api   = memos echo 远程接口，运行时拉取
+  #   tg    = koharu-suite（Telegram 频道归档），运行时游标分页拉取
+  [params.shuoshuo]
+    source = 'tg'
+    author = 'LiuShen'
+    avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+    # local 模式：首页滚动条取最新条数
+    tickerCount = 5
+    # api 模式：memos echo 服务配置
+    api = 'https://mm.liushen.fun/api/echo/page'
+    mediaOrigin = 'https://mm.liushen.fun'
+    fetchLimit = 30
+
+    # ── tg 模式（koharu-suite）──────────────────────────────────────────
+    # 接口契约（见 koharu-suite/packages/koharu-astro）：
+    #   GET {baseUrl}/api/v1/messages/latest?channel=<uuid>&limit=N&cursor=<nextCursor>
+    #   响应 { items: PublicMessage[], nextCursor: string|null }
+    # PublicMessage = { id, publishedAt(UTC Z), sourceUrl(t.me 原帖),
+    #                   content{kind,text,html,entities}, media[]{kind,originalUrl,thumbnailUrl,width,height} }
+    # 频道列表：GET {baseUrl}/api/v1/channels
+    [params.shuoshuo.tg]
+      baseUrl = 'https://tg-api.518339.xyz'
+      # 频道 UUID（用 GET /api/v1/channels 查）；本机部署为「塔罗会 / kemiaoshuoshuo」
+      channelId = 'aa764a3a-f037-45f4-8e04-fea3c5ac4209'
+      # 每页条数（「加载更多」每次追加这么多）
+      pageSize = 12
+      # 卡片作者显示名 / 头像；留空则回退到上面的 author / avatar
+      author = ''
+      avatar = ''
+      # 「查看详情」按钮：跳 Telegram 原帖（sourceUrl）；置 false 则隐藏该按钮
+      detailLink = true
+  # 友链朋友圈动态数据（Friend-Circle-Lite）
+  [params.fcircle]
+    api = 'https://fc.liushen.fun/all.json'
+    statusApi = 'https://fc.liushen.fun/link.json'
+  # 文章列表分页
+  [pagination]
+    pagerSize = 12

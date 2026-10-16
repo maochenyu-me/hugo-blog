@@ -1,0 +1,12 @@
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local workbuddy/port notes
+.workbuddy/
+docs/

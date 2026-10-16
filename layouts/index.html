@@ -1,0 +1,28 @@
+{{- /* 首页：Hero + 说说跑马灯 + 最新文章卡片流 + 右栏侧卡（1:1 源站结构；项目级覆盖：去掉源站没有的 py-8 sm:py-10 包裹层，区块间距全部由各 section 自带） */}}
+{{ define "main" }}
+{{- partial "hero.html" . }}
+{{- partial "talk-card.html" . }}
+
+  {{- $all := where site.RegularPages "Type" "posts" }}
+  {{- $per := site.Params.sidebar.postPerIndex | default 8 }}
+  <section id="recent-posts" class="pt-6 pb-6">
+    <div class="lg:flex lg:gap-6">
+      <div class="min-w-0 flex-1">
+        <div class="mb-6 flex items-center gap-3">
+          <h2 class="text-[1.125rem] font-bold tracking-widest uppercase">最新文章</h2>
+          <div class="h-px flex-1 bg-border/20"></div>
+          <span class="font-cartograph text-[0.8125rem] text-accent/40 select-none">[{{ len (first $per $all) }}/{{ len $all }}]</span>
+        </div>
+        <ul>
+          {{- range first $per $all }}
+          {{- partial "post-card.html" . }}
+          {{- end }}
+        </ul>
+        <div class="mt-8 mb-4 flex w-full justify-center">
+          <a tabindex="0" href="{{ "posts/" | relURL }}" class="group inline-flex items-center gap-1 hover:text-accent group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-accent/20 bg-accent/10 px-8 py-4 text-base font-bold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-accent/20 hover:shadow-xl hover:shadow-accent/20 sm:w-auto">查看所有文章<i class="fa-solid fa-arrow-right text-base leading-none transition-transform duration-300 group-hover:translate-x-1 rtl:-rotate-180" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      {{- partial "home-sidebar.html" . }}
+    </div>
+  </section>
+{{ end }}

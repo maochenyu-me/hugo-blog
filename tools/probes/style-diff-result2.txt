@@ -1,0 +1,299 @@
+
+######## THEME=light ########
+
+[home] 4 处差异:
+  · IDS_MISSING_LOC=[blog-92-兰空图床美化-description,blog-92-兰空图床美化-title,blog-93-chronoframe相册系统-description,blog-93-chronoframe相册系统-title,blog-94-黔山赴夏清风入怀-description,blog-94-黔山赴夏清风入怀-title,blog-95-建站四年我换了框架-description,blog-95-建站四年我换了框架-title,blog-96-vibe-coding实践-description,blog-96-vibe-coding实践-title,blog-97-实用项目推荐-6-description,blog-97-实用项目推荐-6-title,blog-98-axonhub多模型api智能路由网关-description,blog-98-axonhub多模型api智能路由网关-title,blog-99-近期开发的四个开源项目-description,blog-99-近期开发的四个开源项目-title]
+  · mainH 2513 vs 2075
+  · block2 main#2:h2144≠h1706
+  · pick #recent-posts → f2:h1620≠h1181
+
+[post] 12 处差异:
+  · IDS_MISSING_LOC=[ai评论助手,ai评论助手-1,artalk,github加速,hubproxy,memora,主要变化,主要变化-1,主要变化-2,使用方法,使用方法-1,使用方法-2,其他,其他功能,加载优化,地图支持,多用户,多用户管理,媒体处理,安全加固,总结,拉取统计,拉取镜像,架构重做,每日一图,碎碎念,管理后台,管理后台-1,评论审核,评论审核-1,迁移指南,项目介绍]
+  · IDS_ONLY_LOC=[fn:1,fn:2,fnref:1,fnref:2,三级标题足够日常使用,五级标题,代码中的特殊内容,代码块,任务列表,六级标题,其他元素,列表,四级标题,图片,引用,无序列表,有序列表,标题层级,段落与强调,结语,表格,链接]
+  · mainH 22124 vs 8373
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2 overflow-hidden≠relative app-layout pb-12 ; nav#2:h42≠h8004 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:relative app-layout pb-12≠ ; main#2:h21681≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .post-title → f2:h55≠h22 ; f7:fs44px≠fs16px ; f8:lh55px≠lh22.4px
+  · pick .link-card → f10:coklch(95.034259.733≠c246,247,248
+  · pick .post-header → f2:h427≠h394
+  · pick .atk-list MISSING_SRC
+
+[shuoshuo] 9 处差异:
+  · IDS_MISSING_LOC=[3360056239]
+  · mainH 4480 vs 4701
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h4332 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h4037≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+  · pick .atk-list MISSING_SRC
+
+[devices] 7 处差异:
+  · mainH 4394 vs 4337
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h3967 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h3951≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[comment] 9 处差异:
+  · IDS_MISSING_LOC=[atk-comment-11773,atk-comment-11774,atk-comment-11803,atk-comment-11808,atk-comment-11810,atk-comment-11840,atk-comment-11841,atk-comment-11842,atk-comment-11843,atk-comment-11845,atk-comment-11846,atk-comment-11848,atk-comment-11849,atk-comment-11854,atk-comment-11856,atk-comment-11857,atk-comment-11891,atk-comment-11893,atk-comment-11936,atk-comment-11940,atk-comment-11942,atk-comment-11943,atk-comment-11946,atk-comment-11947,atk-comment-11953,atk-comment-12011,atk-comment-12012,atk-comment-12014,atk-comment-12015,atk-comment-12024,atk-comment-12025,atk-comment-12032,atk-comment-12139,atk-comment-12142,atk-comment-12182,atk-comment-12183,atk-comment-12184,atk-comment-12186,atk-comment-12187,atk-comment-12190,atk-comment-12191,atk-comment-12192,atk-comment-12193,atk-comment-12207,atk-comment-12238,atk-comment-12240,atk-comment-12246,atk-comment-12264,atk-comment-12265,atk-comment-12269,atk-comment-12273,atk-comment-12341,atk-comment-12342,atk-comment-12344,atk-comment-12345,atk-comment-12359,atk-comment-12360,atk-comment-12362,atk-comment-12365]
+  · mainH 10781 vs 1582
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1213 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h10338≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h9397≠h217
+  · pick .page-hero MISSING_LOC
+
+[about] 7 处差异:
+  · mainH 2013 vs 1918
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1549 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:about-page app-layout pb-12≠ ; main#2:h1570≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .about-page MISSING_LOC
+
+[archives] 7 处差异:
+  · mainH 14639 vs 1289
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h919 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h14196≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[link] 10 处差异:
+  · IDS_MISSING_LOC=[tombstone-reason-0,tombstone-reason-1,tombstone-reason-10,tombstone-reason-11,tombstone-reason-12,tombstone-reason-13,tombstone-reason-14,tombstone-reason-15,tombstone-reason-16,tombstone-reason-17,tombstone-reason-18,tombstone-reason-19,tombstone-reason-2,tombstone-reason-20,tombstone-reason-21,tombstone-reason-22,tombstone-reason-23,tombstone-reason-24,tombstone-reason-25,tombstone-reason-26,tombstone-reason-27,tombstone-reason-28,tombstone-reason-29,tombstone-reason-3,tombstone-reason-30,tombstone-reason-31,tombstone-reason-32,tombstone-reason-33,tombstone-reason-34,tombstone-reason-35,tombstone-reason-36,tombstone-reason-37,tombstone-reason-38,tombstone-reason-39,tombstone-reason-4,tombstone-reason-40,tombstone-reason-41,tombstone-reason-42,tombstone-reason-43,tombstone-reason-44,tombstone-reason-45,tombstone-reason-46,tombstone-reason-47,tombstone-reason-48,tombstone-reason-49,tombstone-reason-5,tombstone-reason-50,tombstone-reason-51,tombstone-reason-52,tombstone-reason-53,tombstone-reason-6,tombstone-reason-7,tombstone-reason-8,tombstone-reason-9]
+  · IDS_ONLY_LOC=[artalk-comments,comment-section]
+  · mainH 12921 vs 13222
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h12852 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h12478≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+  · pick .atk-list MISSING_SRC
+
+[rewards] 8 处差异:
+  · mainH 2050 vs 2167
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1797 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1607≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+  · pick .atk-list MISSING_SRC
+
+[subscribe] 7 处差异:
+  · mainH 1647 vs 1508
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1139 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1204≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[fcircle] 7 处差异:
+  · mainH 1868 vs 1729
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1359 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1424≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[statement] 7 处差异:
+  · mainH 6689 vs 6561
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h6192 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h6246≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[info] 7 处差异:
+  · mainH 2439 vs 2315
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1945 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1996≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[addlink] 9 处差异:
+  · IDS_MISSING_LOC=[apply-comment,atk-comment-12042,atk-comment-12052,atk-comment-12059,atk-comment-12087,atk-comment-12089,atk-comment-12107,atk-comment-12108,atk-comment-12119,atk-comment-12127,atk-comment-12128,atk-comment-12131,atk-comment-12146,atk-comment-12148,atk-comment-12178,atk-comment-12181,atk-comment-12222,atk-comment-12223,atk-comment-12224,atk-comment-12225,atk-comment-12227,atk-comment-12232,atk-comment-12234,atk-comment-12243,atk-comment-12244,atk-comment-12317,atk-comment-12318,atk-comment-12322,atk-comment-12325,atk-comment-12326,atk-comment-12327,atk-comment-12328,atk-comment-12334,atk-comment-12335,atk-comment-12339,atk-comment-12352,atk-comment-12354,atk-comment-12363,atk-comment-12364,atk-comment-12366,atk-comment-12367,atk-comment-12376]
+  · mainH 13555 vs 3014
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h2645 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h13111≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h10639≠h217
+  · pick .page-hero MISSING_LOC
+
+[search] 6 处差异:
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h440 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282 ; script#5:mt0px≠mt90.1458px
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h392≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+######## THEME=dark ########
+
+[home] 4 处差异:
+  · IDS_MISSING_LOC=[blog-92-兰空图床美化-description,blog-92-兰空图床美化-title,blog-93-chronoframe相册系统-description,blog-93-chronoframe相册系统-title,blog-94-黔山赴夏清风入怀-description,blog-94-黔山赴夏清风入怀-title,blog-95-建站四年我换了框架-description,blog-95-建站四年我换了框架-title,blog-96-vibe-coding实践-description,blog-96-vibe-coding实践-title,blog-97-实用项目推荐-6-description,blog-97-实用项目推荐-6-title,blog-98-axonhub多模型api智能路由网关-description,blog-98-axonhub多模型api智能路由网关-title,blog-99-近期开发的四个开源项目-description,blog-99-近期开发的四个开源项目-title]
+  · mainH 2513 vs 2075
+  · block2 main#2:h2144≠h1706
+  · pick #recent-posts → f2:h1620≠h1181
+
+[post] 12 处差异:
+  · IDS_MISSING_LOC=[ai评论助手,ai评论助手-1,artalk,github加速,hubproxy,memora,主要变化,主要变化-1,主要变化-2,使用方法,使用方法-1,使用方法-2,其他,其他功能,加载优化,地图支持,多用户,多用户管理,媒体处理,安全加固,总结,拉取统计,拉取镜像,架构重做,每日一图,碎碎念,管理后台,管理后台-1,评论审核,评论审核-1,迁移指南,项目介绍]
+  · IDS_ONLY_LOC=[fn:1,fn:2,fnref:1,fnref:2,三级标题足够日常使用,五级标题,代码中的特殊内容,代码块,任务列表,六级标题,其他元素,列表,四级标题,图片,引用,无序列表,有序列表,标题层级,段落与强调,结语,表格,链接]
+  · mainH 22324 vs 8373
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2 overflow-hidden≠relative app-layout pb-12 ; nav#2:h42≠h8004 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:relative app-layout pb-12≠ ; main#2:h21881≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .post-title → f2:h55≠h22 ; f7:fs44px≠fs16px ; f8:lh55px≠lh22.4px
+  · pick .link-card → f10:coklch(95.034259.733≠c246,247,248
+  · pick .post-header → f2:h427≠h394
+  · pick .atk-list MISSING_SRC
+
+[shuoshuo] 9 处差异:
+  · IDS_MISSING_LOC=[3360056239,atk-comment-11360,atk-comment-11366,atk-comment-11371,atk-comment-11372,atk-comment-11386,atk-comment-11392,atk-comment-11395,atk-comment-11402,atk-comment-11415,atk-comment-11420,atk-comment-11465,atk-comment-11478,atk-comment-11484,atk-comment-11485,atk-comment-11528,atk-comment-11529,atk-comment-11538,atk-comment-11542,atk-comment-11610,atk-comment-11611,atk-comment-11614,atk-comment-11617,atk-comment-11699,atk-comment-11700,atk-comment-11716,atk-comment-11717,atk-comment-11718,atk-comment-11723,atk-comment-11724,atk-comment-11738,atk-comment-11739,atk-comment-11741,atk-comment-11742,atk-comment-11743,atk-comment-11744,atk-comment-11746,atk-comment-11747,atk-comment-11748,atk-comment-12002,atk-comment-12003,atk-comment-12021,atk-comment-12023,atk-comment-12044,atk-comment-12046,atk-comment-12064,atk-comment-12065,atk-comment-12066,atk-comment-12069,atk-comment-12071,atk-comment-12102,atk-comment-12106,atk-comment-12121,atk-comment-12124,atk-comment-12125,atk-comment-12126]
+  · mainH 14218 vs 4701
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h4332 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h13774≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h9721≠h217
+  · pick .page-hero MISSING_LOC
+
+[devices] 7 处差异:
+  · mainH 4394 vs 4337
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h3967 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h3951≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[comment] 9 处差异:
+  · IDS_MISSING_LOC=[atk-comment-11773,atk-comment-11774,atk-comment-11803,atk-comment-11808,atk-comment-11810,atk-comment-11840,atk-comment-11841,atk-comment-11842,atk-comment-11843,atk-comment-11845,atk-comment-11846,atk-comment-11848,atk-comment-11849,atk-comment-11854,atk-comment-11856,atk-comment-11857,atk-comment-11891,atk-comment-11893,atk-comment-11936,atk-comment-11940,atk-comment-11942,atk-comment-11943,atk-comment-11946,atk-comment-11947,atk-comment-11953,atk-comment-12011,atk-comment-12012,atk-comment-12014,atk-comment-12015,atk-comment-12024,atk-comment-12025,atk-comment-12032,atk-comment-12139,atk-comment-12142,atk-comment-12182,atk-comment-12183,atk-comment-12184,atk-comment-12186,atk-comment-12187,atk-comment-12190,atk-comment-12191,atk-comment-12192,atk-comment-12193,atk-comment-12207,atk-comment-12238,atk-comment-12240,atk-comment-12246,atk-comment-12264,atk-comment-12265,atk-comment-12269,atk-comment-12273,atk-comment-12341,atk-comment-12342,atk-comment-12344,atk-comment-12345,atk-comment-12359,atk-comment-12360,atk-comment-12362,atk-comment-12365]
+  · mainH 11053 vs 1582
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1213 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h10610≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h9669≠h217
+  · pick .page-hero MISSING_LOC
+
+[about] 7 处差异:
+  · mainH 2013 vs 1918
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1549 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:about-page app-layout pb-12≠ ; main#2:h1570≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .about-page MISSING_LOC
+
+[archives] 7 处差异:
+  · mainH 14639 vs 1289
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h919 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h14196≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[link] 10 处差异:
+  · IDS_MISSING_LOC=[tombstone-reason-0,tombstone-reason-1,tombstone-reason-10,tombstone-reason-11,tombstone-reason-12,tombstone-reason-13,tombstone-reason-14,tombstone-reason-15,tombstone-reason-16,tombstone-reason-17,tombstone-reason-18,tombstone-reason-19,tombstone-reason-2,tombstone-reason-20,tombstone-reason-21,tombstone-reason-22,tombstone-reason-23,tombstone-reason-24,tombstone-reason-25,tombstone-reason-26,tombstone-reason-27,tombstone-reason-28,tombstone-reason-29,tombstone-reason-3,tombstone-reason-30,tombstone-reason-31,tombstone-reason-32,tombstone-reason-33,tombstone-reason-34,tombstone-reason-35,tombstone-reason-36,tombstone-reason-37,tombstone-reason-38,tombstone-reason-39,tombstone-reason-4,tombstone-reason-40,tombstone-reason-41,tombstone-reason-42,tombstone-reason-43,tombstone-reason-44,tombstone-reason-45,tombstone-reason-46,tombstone-reason-47,tombstone-reason-48,tombstone-reason-49,tombstone-reason-5,tombstone-reason-50,tombstone-reason-51,tombstone-reason-52,tombstone-reason-53,tombstone-reason-6,tombstone-reason-7,tombstone-reason-8,tombstone-reason-9]
+  · IDS_ONLY_LOC=[artalk-comments,comment-section]
+  · mainH 12921 vs 13222
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h12852 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h12478≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+  · pick .atk-list MISSING_SRC
+
+[rewards] 9 处差异:
+  · IDS_MISSING_LOC=[atk-comment-10385,atk-comment-10389,atk-comment-10390,atk-comment-10392,atk-comment-10393,atk-comment-10394,atk-comment-10395,atk-comment-10396,atk-comment-10397,atk-comment-10400,atk-comment-10435,atk-comment-10440,atk-comment-10451,atk-comment-10483,atk-comment-10484,atk-comment-10486,atk-comment-10490,atk-comment-10491,atk-comment-11682,atk-comment-11691,atk-comment-12161]
+  · mainH 4363 vs 2167
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1797 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h3920≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h2297≠h217
+  · pick .page-hero MISSING_LOC
+
+[subscribe] 7 处差异:
+  · mainH 1647 vs 1508
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1139 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1204≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[fcircle] 7 处差异:
+  · mainH 1868 vs 1729
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1359 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1424≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[statement] 7 处差异:
+  · mainH 6689 vs 6561
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h6192 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h6246≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[info] 7 处差异:
+  · mainH 2439 vs 2315
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h1945 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h1996≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+[addlink] 9 处差异:
+  · IDS_MISSING_LOC=[apply-comment,atk-comment-12042,atk-comment-12052,atk-comment-12059,atk-comment-12087,atk-comment-12089,atk-comment-12107,atk-comment-12108,atk-comment-12119,atk-comment-12127,atk-comment-12128,atk-comment-12131,atk-comment-12146,atk-comment-12148,atk-comment-12178,atk-comment-12181,atk-comment-12222,atk-comment-12223,atk-comment-12224,atk-comment-12225,atk-comment-12227,atk-comment-12232,atk-comment-12234,atk-comment-12243,atk-comment-12244,atk-comment-12317,atk-comment-12318,atk-comment-12322,atk-comment-12325,atk-comment-12326,atk-comment-12327,atk-comment-12328,atk-comment-12334,atk-comment-12335,atk-comment-12339,atk-comment-12352,atk-comment-12354,atk-comment-12363,atk-comment-12364,atk-comment-12366,atk-comment-12367,atk-comment-12376]
+  · mainH 13554 vs 3014
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h2645 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h13110≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .atk-list → f2:h10638≠h217
+  · pick .page-hero MISSING_LOC
+
+[search] 6 处差异:
+  · block2 nav#0:nav≠main ; nav#1:app-layout mt-6 mb-2≠relative app-layout pb-12 ; nav#2:h42≠h440 ; nav#4:pb0px≠pb48px ; nav#5:mt24px≠mt0px ; nav#6:mb8px≠mb0px
+  · block3 script#0:script≠footer ; script#1:≠footer-wrapper mt-auto ; script#2:h0≠h282 ; script#5:mt0px≠mt90.1458px
+  · block4 main#0:main≠script ; main#1:app-layout pb-12≠ ; main#2:h392≠h0 ; main#4:pb48px≠pb0px
+  · block5 MISSING_LOC (src=footer|footer-wrapper mt-auto)
+  · block6 MISSING_LOC (src=script|)
+  · pick .page-hero MISSING_LOC
+
+DONE

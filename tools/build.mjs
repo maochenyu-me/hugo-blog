@@ -60,11 +60,26 @@ run("hugo", hugoArgs, `hugo ${hugoArgs.join(" ")}`);
 if (skipPagefind) {
   console.log("\n▶ 跳过 pagefind（--no-pf）");
 } else {
-  const pf = spawnSync("npx", ["--yes", "pagefind", "--site", "public"], {
-    cwd: ROOT,
-    stdio: "inherit",
-    shell: process.platform === "win32",
-  });
+  // 优先用本地依赖（npm ci 安装的 node_modules/.bin/pagefind），
+  // 缺失时回退到 npx 现下载，保证本地首次运行也能跑通。
+  const localBin = resolve(
+    ROOT,
+    "node_modules",
+    ".bin",
+    process.platform === "win32" ? "pagefind.cmd" : "pagefind",
+  );
+  const useLocal = existsSync(localBin);
+  const pf = useLocal
+    ? spawnSync(localBin, ["--site", "public"], {
+        cwd: ROOT,
+        stdio: "inherit",
+        shell: process.platform === "win32",
+      })
+    : spawnSync("npx", ["--yes", "pagefind", "--site", "public"], {
+        cwd: ROOT,
+        stdio: "inherit",
+        shell: process.platform === "win32",
+      });
   if (pf.status !== 0) {
     console.warn("\n⚠ pagefind 失败（搜索索引缺失，不影响其余页面）");
   }

@@ -1,0 +1,15 @@
+{
+  "name": "hugo-blog",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Hugo blog (kemiao theme) build tooling",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:prod": "node tools/build.mjs --prod",
+    "build:no-pf": "node tools/build.mjs --no-pf"
+  },
+  "devDependencies": {
+    "pagefind": "1.5.2"
+  }
+}

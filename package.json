@@ -10,6 +10,9 @@
     "build:no-pf": "node tools/build.mjs --no-pf"
   },
   "devDependencies": {
-    "pagefind": "1.5.2"
+    "@swup/preload-plugin": "^3.2.12",
+    "@swup/scroll-plugin": "^3.3.2",
+    "pagefind": "1.5.2",
+    "swup": "^4.10.0"
   }
 }

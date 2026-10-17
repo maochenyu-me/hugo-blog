@@ -1,20 +1,106 @@
 ---
 title: "关于我"
 layout: about
-description: "柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜"
+description: "数据科学与仿真开发，折腾博客与自动化小工具"
 avatar: "/info/avatar.ico"
-name: "清羽飞扬"
+name: "克喵"
 greeting: "Hi! I'm"
 motto: "柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜"
 floatsLeft:
-  - "🐝 勤劳小蜜蜂"
-  - "🧱 踏实实在人"
-  - "👷‍♀️ 努力小天使"
-  - "🐔 乐观大白鹅"
+  - "🐍 Python 信手拈来"
+  - "📉 回归模型调参中"
+  - "🛠️ 仿真搬砖工"
+  - "☕ 深夜编译人"
 floatsRight:
-  - "阳光小少年 👱‍♀️"
-  - "温暖小太阳 ☀️"
-  - "可爱小白兔 🐰"
-  - "懒惰小胖猪 🐗"
+  - "Hugo 折腾家 🏗️"
+  - "自动化爱好者 🤖"
+  - "Node.js 副业 🟩"
+  - "喵星常驻居民 🐱"
+# 6 卡片网格（模板：themes/kemiao/layouts/_default/about.html）
+# 所有文案都是占位，改这里即可，不用动主题
+cards:
+  # 基础信息（左上，7/12 宽）
+  profile:
+    rows:
+      - label: "昵称"
+        value: "克喵"
+      - label: "GitHub"
+        value: "Kemeow0815"
+        link: "https://github.com/Kemeow0815"
+      - label: "方向"
+        value: "数据科学与仿真开发"
+      - label: "技术栈"
+        value: "Python / MATLAB / Simulink / Node.js"
+      - label: "常用工具"
+        value: "Hugo / Git / WorkBuddy"
+      - label: "邮箱"
+        value: "待补充"
+  # 性格侧写（右上，5/12 宽；image 换成自己的 MBTI 插图或删掉整行）
+  personality:
+    type: "INTJ"
+    name: "建筑师"
+    summary: "喜欢把混乱的数据整理成清晰的模型，也喜欢把重复的活儿交给脚本。"
+    traits: ["分析", "动手", "较真"]
+    link: "https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC"
+    image: "/config/img/enfj.svg"
+  # 技能与工具（中左，8/12 宽；icon 用 Font Awesome 类名，不填则显示文字）
+  skills:
+    rows:
+      - - name: "Python"
+          icon: "fa-brands fa-python"
+        - name: "Node.js"
+          icon: "fa-brands fa-node-js"
+        - name: "Git"
+          icon: "fa-brands fa-git-alt"
+        - name: "GitHub"
+          icon: "fa-brands fa-github"
+        - name: "Docker"
+          icon: "fa-brands fa-docker"
+        - name: "Hugo"
+          icon: "fa-solid fa-bolt"
+      - - name: "MATLAB"
+        - name: "Simulink"
+        - name: "Windows"
+          icon: "fa-brands fa-windows"
+        - name: "Linux"
+          icon: "fa-brands fa-linux"
+        - name: "Markdown"
+          icon: "fa-brands fa-markdown"
+        - name: "AI 编程"
+          icon: "fa-solid fa-robot"
+    note: "正在持续学习中"
+  # 联系与兴趣（中右，4/12 宽）
+  contact:
+    socials:
+      - name: "GitHub"
+        url: "https://github.com/Kemeow0815"
+        icon: "fa-brands fa-github"
+    hobbies: ["建模", "仿真", "折腾博客", "自动化"]
+  # 在做的事（下左，7/12 宽）
+  projects:
+    items:
+      - name: "Hugo 博客"
+        url: "https://github.com/Kemeow0815"
+        desc: "Astro 主题移植到 Hugo 的折腾记录，持续补齐源站交互细节。"
+      - name: "workbuddy-auto-signin"
+        url: "https://github.com/Kemeow0815"
+        desc: "Windows 计划任务驱动的 WorkBuddy 每日签到自动化。"
+    focus:
+      title: "近期节奏"
+      items:
+        - title: "博客移植"
+          desc: "对照源站清单补齐 swup、灯箱、最近评论等交互。"
+        - title: "数据科学"
+          desc: "回归建模与仿真任务的日常迭代。"
+        - title: "自动化"
+          desc: "把重复劳动交给脚本和计划任务。"
+  # 自我评价（下右，5/12 宽）
+  evaluation:
+    items:
+      - label: "做事"
+        text: "先把问题拆清楚再动手，能用脚本解决的不重复第二遍。"
+      - label: "学习"
+        text: "数据科学、仿真、前端折腾三线并行，越折腾越上头。"
+      - label: "总结"
+        text: "喵！"
 ---
-<section class="about-card-grid"><section class="about-card about-card-profile"><div class="panel-head"><span>Identity</span><h2>基础信息</h2></div><div class="info-list"><div class="info-item"><span class="info-label">姓名</span><span class="info-value">柳清扬</span></div><div class="info-item"><span class="info-label">昵称</span><span class="info-value">LiuShen</span></div><div class="info-item"><span class="info-label">性别</span><span class="info-value">男</span></div><div class="info-item"><span class="info-label">毕业院校</span><span class="info-value">武汉理工大学</span></div><div class="info-item"><span class="info-label">专业</span><span class="info-value">人工智能</span></div><div class="info-item"><span class="info-label">当前工作</span><span class="info-value">华为</span></div><div class="info-item"><span class="info-label">地址</span><span class="info-value">陕西西安</span></div><div class="info-item"><span class="info-label">邮箱</span><a href="mailto:01@liushen.fun" class="info-value">01@liushen.fun</a></div><div class="info-item"><span class="info-label">QQ</span><span class="info-value">3162475700</span></div></div></section><section class="about-card about-card-personality"><div class="panel-head"><span>Personality</span><h2>性格侧写</h2></div><div class="personality-body"><div><p class="personality-type">ENFJ-T</p><p class="personality-name">主人公</p><p class="personality-summary">热情、共情，也喜欢把零散的想法整理成可以被分享和被理解的内容。</p><div class="personality-traits"><span>共情</span><span>表达</span><span>组织</span></div><a href="https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC" target="_blank" rel="noopener noreferrer">查看详情</a></div><img src="/config/img/enfj.svg" alt="主人公 性格插图" loading="lazy" decoding="async"></div></section><section class="about-card about-card-skills"><div class="panel-head"><span>Capabilities</span><h2>技能与工具</h2></div><div class="skills-viewport"><div class="skills-lanes"><div class="skills-row skills-row-1"><div class="skill-chip" style="--delay: 0s" role="img" aria-label="Python" title="Python"><i class="fa-brands fa-python" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.025s" role="img" aria-label="Java" title="Java"><i class="fa-brands fa-java" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.05s" role="img" aria-label="JavaScript" title="JavaScript"><i class="fa-brands fa-js" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.07500000000000001s" role="img" aria-label="Node.js" title="Node.js"><i class="fa-brands fa-node-js" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.1s" role="img" aria-label="HTML5" title="HTML5"><i class="fa-brands fa-html5" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.125s" role="img" aria-label="CSS3" title="CSS3"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.15000000000000002s" role="img" aria-label="PHP" title="PHP"><i class="fa-brands fa-php" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.17500000000000002s" role="img" aria-label="Rust" title="Rust"><i class="fa-brands fa-rust" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.2s" role="img" aria-label="Go" title="Go"><i class="fa-brands fa-golang" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.225s" role="img" aria-label="Swift" title="Swift"><i class="fa-brands fa-swift" aria-hidden="true"></i></div></div><div class="skills-row skills-row-2"><div class="skill-chip" style="--delay: 0.25s" role="img" aria-label="React" title="React"><i class="fa-brands fa-react" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.275s" role="img" aria-label="Vue.js" title="Vue.js"><i class="fa-brands fa-vuejs" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.30000000000000004s" role="img" aria-label="Angular" title="Angular"><i class="fa-brands fa-angular" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.325s" role="img" aria-label="Bootstrap" title="Bootstrap"><i class="fa-brands fa-bootstrap" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.35000000000000003s" role="img" aria-label="Sass" title="Sass"><i class="fa-brands fa-sass" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.375s" role="img" aria-label="Less" title="Less"><i class="fa-brands fa-less" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.4s" role="img" aria-label="npm" title="npm"><i class="fa-brands fa-npm" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.42500000000000004s" role="img" aria-label="Yarn" title="Yarn"><i class="fa-brands fa-yarn" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.45s" role="img" aria-label="Laravel" title="Laravel"><i class="fa-brands fa-laravel" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.47500000000000003s" role="img" aria-label="WordPress" title="WordPress"><i class="fa-brands fa-wordpress" aria-hidden="true"></i></div></div><div class="skills-row skills-row-3"><div class="skill-chip" style="--delay: 0.5s" role="img" aria-label="Git" title="Git"><i class="fa-brands fa-git-alt" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.525s" role="img" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.55s" role="img" aria-label="GitLab" title="GitLab"><i class="fa-brands fa-gitlab" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.5750000000000001s" role="img" aria-label="Docker" title="Docker"><i class="fa-brands fa-docker" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.6000000000000001s" role="img" aria-label="Linux" title="Linux"><i class="fa-brands fa-linux" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.625s" role="img" aria-label="Windows" title="Windows"><i class="fa-brands fa-windows" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.65s" role="img" aria-label="Apple" title="Apple"><i class="fa-brands fa-apple" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.675s" role="img" aria-label="Figma" title="Figma"><i class="fa-brands fa-figma" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.7000000000000001s" role="img" aria-label="Cloudflare" title="Cloudflare"><i class="fa-brands fa-cloudflare" aria-hidden="true"></i></div><div class="skill-chip" style="--delay: 0.7250000000000001s" role="img" aria-label="AWS" title="AWS"><i class="fa-brands fa-aws" aria-hidden="true"></i></div></div></div></div><p class="skills-note">正在持续学习中</p></section><section class="about-card about-card-contact"><div class="panel-head"><span>Connect</span><h2>联系与兴趣</h2></div><div class="social-grid"><a class="social-card" href="https://github.com/willow-god" target="_blank" rel="noopener noreferrer"><img src="https://p.liiiu.cn/i/2024/07/27/66a461a3098aa.webp" alt="" loading="lazy" decoding="async" aria-hidden="true"><span>GitHub</span></a><a class="social-card" href="https://gitee.com/willow-god" target="_blank" rel="noopener noreferrer"><img src="https://p.liiiu.cn/i/2024/07/27/66a461c3dea80.webp" alt="" loading="lazy" decoding="async" aria-hidden="true"><span>Gitee</span></a><a class="social-card" href="https://qm.qq.com/cgi-bin/qm_share/open_source_page?uin=3162475700&amp;jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="https://p.liiiu.cn/i/2024/07/27/66a461b627dc2.webp" alt="" loading="lazy" decoding="async" aria-hidden="true"><span>QQ</span></a></div><div class="hobby-list"><span>阅读</span><span>写作</span><span>编程</span><span>摄影</span></div></section><section class="about-card about-card-projects"><div class="panel-head"><span>Projects</span><h2>在做的事</h2></div><div class="project-list"><a class="project-item" href="https://github.com/willow-god/Friend-Circle-Lite" target="_blank" rel="noopener noreferrer"><span class="project-kicker">Project</span><strong>Friend-Circle-Lite</strong><p>轻量化友链朋友圈，用更简单的方式聚合友链动态。</p></a><a class="project-item" href="https://github.com/willow-god/hexo-safego" target="_blank" rel="noopener noreferrer"><span class="project-kicker">Project</span><strong>Hexo-Safego</strong><p>Hexo 插件之安全跳转中转页，用于外链跳转提醒。</p></a></div><div class="project-focus"><span>近期节奏</span><div class="project-focus-grid"><div class="project-focus-item"><strong>站点体验</strong><p>持续打磨 Astro 博客的页面、交互和组件细节。</p></div><div class="project-focus-item"><strong>友链生态</strong><p>维护 Friend-Circle-Lite 等友链相关工具。</p></div><div class="project-focus-item"><strong>安全跳转</strong><p>优化外链提醒、跳转逻辑与访问体验。</p></div></div></div></section><section class="about-card about-card-evaluation"><div class="panel-head"><span>Snapshot</span><h2>自我评价</h2></div><div class="evaluation-list"><div><span>思想</span><p>思想上乐观开朗，乐于助人，具有团队协作精神及创新意识。</p></div><div><span>工作</span><p>工作上极富责任心与信念感，对待事情认真负责，有较强的组织管理及动手能力。</p></div><div><span>总结</span><p>人嘎嘎好！</p></div></div></section></section>

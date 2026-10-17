@@ -123,6 +123,10 @@ summaryLength = 120
       site = 'Hugo-kemiao-blog'
     [params.comments.twikoo]
       envId = ''
+    # 最近评论（artalk/twikoo 生效；ecoku 无公开接口，启用时自动关闭该功能）
+    [params.comments.recentComments]
+      # 站主昵称过滤：命中则不计入最近评论（逗号分隔，留空不过滤）
+      authorFilter = ''
     # Ecoku：自托管评论，provider 切 ecoku 时启用
     # 官方说明：https://ecoku.zsh.moe/integration/html
     [params.comments.ecoku]
@@ -150,6 +154,15 @@ summaryLength = 120
   # 字体（正文悠哉体走源站分片 CDN）
   [params.fonts]
     yozaiCss = 'https://jsd.liiiu.cn/gh/willow-god/Sharding-fonts/Yozai-Medium/result.min.css'
+
+  # 欢迎来访者卡（首页右栏 / 文章侧栏）：访客 IP 定位
+  [params.welcome]
+    api = 'https://60s-api.518339.xyz/v2/ip'
+    # 博主坐标（用于计算访客距离；任一为 0 则不显示“距离”这一行）
+    originLat = 0
+    originLng = 0
+    # 定位结果本地缓存秒数（默认 1 小时，避免频繁请求）
+    cacheTtl = 3600
 
   # 页面背景（明暗各一套壁纸 + 底色 + 微调）
   # 由 partials/background-style.html 渲染成 head 里的一段 <style>；
@@ -183,10 +196,19 @@ summaryLength = 120
       saturate = 1.18
   # 统计（默认关闭）
   [params.umami]
-    enable = false
-    src = ''
-    websiteId = ''
+    enable = true
+    src = 'https://um.081531.xyz/script.js'
+    websiteId = 'b37b2322-c5cd-44a3-a56f-a042565fa772'
+    # 可选：只在这些域名上报（留空 = 不限）
     domains = ''
+  # 流量数据卡（首页右栏 / 文章侧栏）：Umami 公开分享接口
+  # 在 Umami 后台 网站 → 编辑 → Share URL 生成分享链接，形如 https://cloud.umami.is/share/xxxx/站点名
+  # umamiBase 填站点根（如 https://cloud.umami.is），umamiShareId 填 /share/ 后面那段
+  [params.traffic]
+    umamiBase = 'https://um.081531.xyz/'
+    umamiShareId = 'M5m1EmLt669X82mG'
+    timezone = 'Asia/Shanghai'
+    cacheTtl = 3600
   # 访问统计：soxft/busuanzi 自部署版（https://github.com/soxft/busuanzi）
   # 脚本 POST {origin}/api 并填充 #busuanzi_{site_pv,site_uv,page_pv,page_uv}（默认前缀即 busuanzi）
   # 文章页 PV/UV 在 post-header.html；站点级 UV/PV 在首页 webinfo-card.html

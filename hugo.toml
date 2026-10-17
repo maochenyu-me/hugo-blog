@@ -179,7 +179,7 @@ summaryLength = 120
     [params.background.light]
       # 站内路径（blog/static 下，如 /imgs/xxx.webp）或外链 URL 皆可
       # 只填 light 时，深色会自动复用同一张
-      image = '/images/bg/light.jpg'
+      image = '/images/bg/light.webp'
       # 页面基础色 --background：底色、卡片、渐变遮罩都由它派生
       color = '#f2f5ec'
       # 该层整体透明度
@@ -189,7 +189,7 @@ summaryLength = 120
       saturate = 1.16
 
     [params.background.dark]
-      image = '/images/bg/dark.jpg'
+      image = '/images/bg/dark.webp'
       color = '#10131a'
       opacity = 0.38
       blur = 6

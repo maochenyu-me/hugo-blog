@@ -52,7 +52,7 @@ if (existsSync(PUBLIC)) {
 }
 
 // 2) Hugo 构建
-const hugoArgs = ["--gc", "--logLevel", "warn"];
+const hugoArgs = ["--gc", "--minify", "--logLevel", "warn"];
 if (!prod) hugoArgs.unshift("-D"); // 项目约定：本地构建含草稿
 run("hugo", hugoArgs, `hugo ${hugoArgs.join(" ")}`);
 

@@ -11,8 +11,7 @@ hero:
     - text: "内容规范"
     - text: "CC BY-NC-SA 4.0"
 ---
-
-<section class="app-prose mb-16 max-w-app prose-img:border-0"><h3 id="更新日期">更新日期</h3>
+<h3 id="更新日期">更新日期</h3>
 <p>本协议的最近更新日期为：2024-09-08。</p>
 <p>本站非常重视用户的隐私和个人信息保护。你在使用 <code>blog.liushen.fun</code> 网站时，可能会收集和使用你的相关信息。通过本《隐私政策》向你说明如何收集、使用、保存、共享和转让这些信息，并阐明你的相关权利。</p>
 <h3 id="一内容规范与法律责任">一、内容规范与法律责任</h3>
@@ -159,4 +158,4 @@ hero:
 <p><strong>以下内容仅供本网站展示，禁止盗用！</strong></p>
 <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8c99714aed.webp" alt="域名证书" loading="lazy" decoding="async"><figcaption class="article-image-caption">域名证书</figcaption></figure>
 <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cadfe264d.webp" alt="ICP备案查询" loading="lazy" decoding="async"><figcaption class="article-image-caption">ICP备案查询</figcaption></figure>
-<figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cb0eebfe4.webp" alt="公安备案查询" loading="lazy" decoding="async"><figcaption class="article-image-caption">公安备案查询</figcaption></figure></section>
+<figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cb0eebfe4.webp" alt="公安备案查询" loading="lazy" decoding="async"><figcaption class="article-image-caption">公安备案查询</figcaption></figure>

@@ -88,10 +88,12 @@ summaryLength = 120
   author = 'LiuShen'
   avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
   ogImage = '/og.webp'
+  # 友链申请页「本站信息」模板里的站点截图（可留空，留空则省略该行）
+  siteshot = ''
   # 主题三档 light/dark/auto，localStorage 持久化，head 内联脚本防白闪
   defaultTheme = 'auto'
   # 页脚运行计时起点
-  runtimeStart = '2024-11-01T012:05:36+08:00'
+  runtimeStart = '2024-11-01T12:12:36+08:00'
   # 版权与备案（保留源站占位）
   copyrightStartYear = 2024
   beianIcp = ''

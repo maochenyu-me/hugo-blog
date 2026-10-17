@@ -1,0 +1,79 @@
+# 友链申请页文案（/addlink/）
+# 对应模板 themes/kemiao/layouts/_default/addlink.html；样式类名在 site.css（apply-*）。
+# 字段里允许写行内 HTML（如 <strong class="requirement-warn">）；站点域名、站名、头像
+# 等站点信息不在这里维护——模板会直接读 hugo.toml 的 params。
+flow:
+  kicker: Flow
+  title: 申请流程
+  steps:
+    - 确认贵站符合基本要求，并先添加本站友链（尽量）。
+    - 按照申请格式整理站点信息，尽量提供稳定可访问的图片链接。
+    - 在页面底部评论区/GitHub Issues提交申请，审核通过后我会添加并回复。
+
+requirements:
+  kicker: Requirements
+  title: 友链要求
+  id: requirements
+  items:
+    - title: 站点定位
+      content: 优先接受个人博客、技术笔记、生活记录、开源项目主页等非强商业化站点；暂不接受纯广告、<strong class="requirement-warn">采集</strong>、<strong class="requirement-warn">营销</strong>或<strong class="requirement-warn">跳转聚合站</strong>。
+    - title: 内容质量
+      content: 希望站点有稳定且真实的内容输出，原创或认真整理的内容均可；请避免整站搬运、AI 批量灌水和严重同质化内容。
+    - title: 合规底线
+      content: <strong class="requirement-warn">站点不得包含违法违规、色情、赌博、暴力、诈骗、恶意下载、侵权盗版等内容</strong>；一切以《中华人民共和国网络安全法》及相关法律法规为基准，如有冲突，无条件服从法律；如发现此类内容，将直接移除友链。
+    - title: 访问体验
+      content: 站点应能<strong class="requirement-warn">稳定访问</strong>，并尽量保证国内访问体验。<strong class="requirement-warn">少量广告</strong>可以理解，但请不要出现遮挡内容、强制跳转或影响阅读的弹窗。
+    - title: 安全与证书
+      content: 建议启用 HTTPS，并保持证书有效。如果站点连续一周无法访问，或证书长期异常，我可能会暂时下架友链。
+    - title: 互惠原则
+      content: 申请前请先添加本站友链，或在留言中说明预计添加时间。一般不接受长期单向友链。
+    - title: 更新与维护
+      content: 建议站点<strong class="requirement-warn">仍在维护中</strong>。若长期停止更新也没关系，但希望页面、链接和基础信息保持可用。
+    - title: 文章数量
+      content: 直接申请建议已有 <strong class="requirement-warn">8 篇以上</strong>文章；如果我们已经有过多次互动，或站点质量较高，这条可以适当放宽。
+    - title: 展示调整
+      content: 为了适配页面布局，我可能会对站点名称、描述长度或截图做轻微调整。如需修改，可随时留言。
+    - title: 长期维护
+      content: 我会不定期检查友链状态。如果发现本站链接被移除，可能会同步取消贵站友链；如有误判，欢迎联系恢复。
+
+domains:
+  kicker: Domain
+  title: 域名说明
+  items:
+    - label: 付费域名
+      level: accept
+      content: 常见顶级域名如 .com、.cn、.net、.org、.fun、.top 等均可。
+    - label: 可信免费域名
+      level: accept
+      content: github.io、eu.org、Cloudflare Pages 等可接受，前提是内容稳定合规。
+    - label: 小众二级分发域名
+      level: review
+      content: 来自不知名分发服务的二级域名需要额外审核，主要考虑稳定性和安全风险。
+    - label: 暂不接受
+      level: reject
+      content: 暂不接受访问异常、被墙严重、存在明显安全风险或频繁变更的域名。
+
+mysite:
+  kicker: My Site
+  title: 本站信息
+  copy: 如果您愿意在贵站添加本站，可以直接使用下面的信息：
+  # 模板字段从 hugo.toml 自动生成（站点名/域名/头像/描述/Atom/友链页），无需在此维护；
+  # siteshot 读取 params.siteshot，未配置则省略该行。
+  note: "`siteshot`、`atom` 和 `linkpage` 为可选项。若未提供站点截图，本站会尝试自己截图，但速度和清晰度可能不稳定，建议优先提供自托管截图。"
+
+format:
+  kicker: Format
+  title: 申请格式
+  copy: 请在评论区/GitHub Issues按如下格式提交信息，字段越完整越方便审核：
+  fields:
+    - name: 站点名称
+    - link: 站点地址
+    - avatar: 头像地址
+    - descr: 一句话描述
+    - siteshot: 站点截图（可选）
+    - atom: RSS / Atom 订阅地址（可选）
+    - linkpage: 友链页面地址（可选）
+  button: 一键填充申请内容
+  notes:
+    - 提交后我会尽快查看。若信息不完整或暂未满足要求，我会在评论区说明原因，也欢迎后续重新申请。
+    - 友链的重点是“友”，如果我们已经常有互动，规则可以更灵活一点。

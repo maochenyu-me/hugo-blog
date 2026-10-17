@@ -52,6 +52,14 @@ body:
     validations:
       required: false
   - type: input
+    id: atom
+    attributes:
+      label: RSS / Atom 订阅地址
+      description: 选填。你的订阅源地址，用于朋友圈聚合展示贵站最新文章；不填不影响友链展示
+      placeholder: https://example.com/atom.xml
+    validations:
+      required: false
+  - type: input
     id: linkPage
     attributes:
       label: 友链页链接

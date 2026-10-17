@@ -317,6 +317,15 @@ const FIELD_ALIASES = {
   友链页面: "linkPage",
   友链页地址: "linkPage",
   linkpage: "linkPage",
+  // atom（RSS 订阅源）只用于朋友圈（Friend-Circle-Lite）后端配置，站长人工加到 FCL；
+  // 不属于 data/links.yaml 的字段，buildSite 不会取它，所以不会进评论区的 YAML 代码块。
+  // 别名键必须是 normKey 归一化后的形态（无空格/标点）。
+  "rssatom订阅地址": "atom",
+  "rssatom": "atom",
+  "atom": "atom",
+  "rss": "atom",
+  "订阅地址": "atom",
+  "订阅源": "atom",
 };
 
 const NO_RESPONSE = /^_?\s*(no response|无响应|未填写)\s*_?$/i;

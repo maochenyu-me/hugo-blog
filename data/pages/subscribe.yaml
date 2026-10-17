@@ -1,0 +1,42 @@
+# 订阅页文案（对应模板 themes/kemiao/layouts/_default/subscribe.html）
+# 本站 RSS 地址模板自动取 hugo.toml 的 baseURL（/atom.xml），无需在此写域名。
+cards:
+  - icon: fa-solid fa-rss
+    title: RSS / Atom 订阅
+    desc: 使用你喜欢的 RSS 阅读器订阅本站，把最新文章收进自己的信息流里。
+    action: 打开订阅源
+    href: atom        # atom = 本站订阅源（模板自动生成绝对地址）
+  - icon: fa-regular fa-envelope
+    title: 邮箱订阅
+    desc: 通过 GitHub Issue 提交邮箱，新文章发布后会自动推送到你的收件箱。
+    action: 前往订阅
+    href: "https://github.com/willow-god/Friend-Circle-Lite/issues/new?assignees=&labels=&projects=&template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md&title=%5B%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85%5D"
+    external: true
+
+rss:
+  kicker: RSS
+  title: RSS 订阅详情
+  icon: fa-solid fa-satellite-dish
+  desc: 本站提供 Atom 格式订阅源。复制下方地址到你的 RSS 阅读器，即可在阅读器中接收最新文章更新。
+  toolsLabel: 推荐 RSS 工具
+  tools:
+    - { label: Friend-Circle-Lite, href: "https://github.com/willow-god/Friend-Circle-Lite" }
+    - { label: RSSHub, href: "https://github.com/DIYgod/RSSHub" }
+    - { label: hexo-circle-of-friends, href: "https://github.com/Rock-Candy-Tea/hexo-circle-of-friends" }
+
+mail:
+  kicker: Mail
+  title: 邮箱订阅指南
+  icon: fa-regular fa-paper-plane
+  # desc 里 {link} 会被替换成下面的链接
+  desc: "如果你更习惯通过邮件接收更新，可以通过 GitHub Issue 完成订阅。该功能基于{link}实现；不想继续接收时，删除对应 Issue 即可取消订阅。"
+  link:
+    label: Friend-Circle-Lite
+    href: "https://github.com/willow-god/Friend-Circle-Lite"
+  steps:
+    - text: 访问 GitHub Issue 订阅页面。
+      href: "https://github.com/willow-god/Friend-Circle-Lite/issues/new?assignees=&labels=&projects=&template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md&title=%5B%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85%5D"
+    - text: 在模板中填写你的邮箱地址和必要信息。
+    - text: 提交 Issue，等待系统自动处理订阅。
+
+footer: 感谢你的关注。愿每一次更新都不是打扰，而是一封刚好抵达的远方来信。

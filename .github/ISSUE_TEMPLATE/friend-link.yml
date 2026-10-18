@@ -16,7 +16,7 @@ body:
     attributes:
       label: 站点名称
       description: 会作为友链卡片的标题
-      placeholder: 例如：清羽飞扬
+      placeholder: 例如：喵洛阁
     validations:
       required: true
   - type: input

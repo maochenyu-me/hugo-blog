@@ -1,7 +1,7 @@
 baseURL = 'https://blog.kemiaosw.top/'
 locale = 'zh-cn'
 defaultContentLanguage = 'zh-cn'
-title = "LiuShen's Blog - 清羽飞扬"
+title = "KeMiao's Blog - 喵洛阁"
 hasCJKLanguage = true
 # 主题不用 theme = 'kemiao' 挂载，改为手动 mounts：主题 data/ 不参与挂载，
 # 数据只认根目录 data/（博客自有配置），从根源消除数组型 YAML 的 overridden 警告
@@ -83,10 +83,10 @@ summaryLength = 120
 
 [params]
   # 站点信息（占位，与源站一致；正式使用时替换）
-  description = '清羽飞扬的技术博客 |提供建站教程、编程实战笔记、生活点滴，个人经验，融合技术开发与人文思考，定期更新深度指南与创意灵感，给大家提供更多帮助。'
-  keywords = ['清羽飞扬', '博客', '建站教程', '编程', '技术博客', 'LiuShen']
-  author = 'LiuShen'
-  avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+  description = '克喵的小站，在这里记录一些文字'
+  keywords = ['克喵', '博客', 'Hugo', '日常', '技术', 'KeMiao']
+  author = '克喵:)'
+  avatar = 'https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0'
   ogImage = '/og.webp'
   # 友链申请页「本站信息」模板里的站点截图（可留空，留空则省略该行）
   siteshot = ''
@@ -105,7 +105,7 @@ summaryLength = 120
   # 图标加载：cdn 与源站同 CDN；local 经 Hugo Pipes 自托管（生产推荐）
   [params.icons]
     provider = 'local'
-    cdn = 'https://jsd.liiiu.cn/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css'
+    cdn = 'https://cdn.jsdmirror.com/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css'
   # 搜索双后端：pagefind | algolia（algolia 凭据为源站示例，切 provider 即换后端）
   [params.search]
     provider = 'pagefind'
@@ -238,7 +238,7 @@ summaryLength = 120
   # enable = false 时只输出 /favicon.ico，其余 PWA 引用一律不渲染（避免 404）
   [params.pwa]
     enable = true
-    shortName = '清羽飞扬'
+    shortName = '喵洛阁'
     themeColor = '#242424'
     backgroundColor = '#242424'
     display = 'standalone'
@@ -246,27 +246,27 @@ summaryLength = 120
 
   # 首页 Hero（阶段②）
   [params.hero]
-    title = "LiuShen's Blog"
+    title = "KeMiao's Blog"
     terminalPrefix = '~'
     terminalPath = '/hello-world'
     terminalSuffix = '$'
-    avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+    avatar = 'https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0'
     authorLabel = '作者'
-    authorName = 'LiuShen'
-    authorUrl = 'https://www.liushen.fun/'
+    authorName = '克喵:)'
+    authorUrl = 'https://www.kemiaosw.top/'
     # 社交图标（顺序即渲染顺序）
     [[params.hero.socials]]
       icon = 'fa-solid fa-envelope'
-      title = '发送邮件给 LiuShen'
-      url = 'mailto:01@liushen.fun'
+      title = '发送邮件给 克喵'
+      url = 'mailto:contact@518339.xyz'
     [[params.hero.socials]]
       icon = 'fa-brands fa-qq'
-      title = '通过 QQ 联系 LiuShen'
-      url = 'http://wpa.qq.com/msgrd?v=3&uin=3162475700&site=qq&menu=yes'
+      title = '通过 QQ 联系 KeMiao'
+      url = 'https://qm.qq.com/q/4jAMZJH8NO'
     [[params.hero.socials]]
       icon = 'fa-brands fa-github'
       title = 'LiuShen 的 GitHub'
-      url = 'https://github.com/willow-god'
+      url = 'https://github.com/maochenyu-me'
     [[params.hero.socials]]
       icon = 'fa-solid fa-rss'
       title = 'RSS Feed'
@@ -292,8 +292,8 @@ summaryLength = 120
   #   tg    = koharu-suite（Telegram 频道归档），运行时游标分页拉取
   [params.shuoshuo]
     source = 'tg'
-    author = 'LiuShen'
-    avatar = 'https://p.liiiu.cn/i/2025/03/13/67d2fc82d329c.webp'
+    author = '克喵:)'
+    avatar = 'https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0'
     # local 模式：首页滚动条取最新条数
     tickerCount = 5
     # api 模式：memos echo 服务配置

@@ -1,0 +1,10 @@
+# 欢迎来访者卡文案（首页右栏 / 文章侧栏共用）
+# 改这里即可，不用动模板；每项 paragraphs 为一段 HTML，可写 <a>、<strong> 等。
+# 若不想显示卡片，直接删除本文件或把 paragraphs 留空。
+title: "欢迎来访者"
+icon: "fa-solid fa-user-astronaut"
+paragraphs:
+  - |-
+    我是克喵:)，一个 <strong>热爱折腾</strong> 的ai编程、博客魔改爱好者，喜欢折腾开源项目，记录一些文字。
+  - |-
+    有问题欢迎交流，建议先看看<a href="https://how-to-ask.081531.xyz/" target="_blank" rel="noopener noreferrer">提问的智慧</a>；如果需要联系我，可以发 <a href="mailto:contact@518339.xyz" target="_blank" rel="noopener noreferrer">邮件</a>。

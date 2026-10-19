@@ -10,7 +10,7 @@ cards:
     title: 邮箱订阅
     desc: 通过 GitHub Issue 提交邮箱，新文章发布后会自动推送到你的收件箱。
     action: 前往订阅
-    href: "https://github.com/willow-god/Friend-Circle-Lite/issues/new?assignees=&labels=&projects=&template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md&title=%5B%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85%5D"
+    href: "https://github.com/maochenyu-me/Friend-Circle-Lite/issues/new?template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md"
     external: true
 
 rss:
@@ -35,7 +35,7 @@ mail:
     href: "https://github.com/willow-god/Friend-Circle-Lite"
   steps:
     - text: 访问 GitHub Issue 订阅页面。
-      href: "https://github.com/willow-god/Friend-Circle-Lite/issues/new?assignees=&labels=&projects=&template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md&title=%5B%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85%5D"
+      href: "https://github.com/maochenyu-me/Friend-Circle-Lite/issues/new?template=%E9%82%AE%E7%AE%B1%E8%AE%A2%E9%98%85.md"
     - text: 在模板中填写你的邮箱地址和必要信息。
     - text: 提交 Issue，等待系统自动处理订阅。
 

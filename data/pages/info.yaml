@@ -1,0 +1,58 @@
+blocks:
+- h2: 关于本站
+  id: 关于本站
+- p: 本站始于 <strong>2024 年 11 月 1 日</strong>。最初仅仅是为了分享Telegram遇到的好用资源，后来接触 ai编程，逐渐开始魔改，经历了许多框架以至今日，基于 <a href="https://blog.liushen.fun/" target="_blank" rel="noopener noreferrer">LiuShen</a> 博客移植到Hugo然后一定程度的自改。
+- h3: 时间线
+  id: 时间线
+- ul:
+  - <strong>2024.11</strong> - 站点初建，托管于 <strong>GitHub Pages</strong>，使用 <code>面条</code> 大佬的<a href="https://github.com/miantiao-me/BroadcastChannel" target="_blank" rel="noopener noreferrer">Telegram微博客</a>。
+  - <strong>2024.11 ~ 12</strong> - 接触了 <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer">Hexo</a> 和 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>，但当时我的能力仅限于初步魔改，止步于跟着一些魔改文章瞎改改。没什么乐趣，不符合我的审美。
+  - <strong>2025.01 ~ 2025.02</strong> - 正式开始使用域名 <code>kemeow.top</code>、<code>kemiaosw.top</code>，期间搞了一阵VitePress以及vuepress类型的博客，但是感觉不太适合我这种非技术人员，故放弃。
+  - <strong>2025.02.11</strong> - 很有意义的一天，我在刷GitHub是发现了 <code>纸鹿</code>大佬的<strong>Nuxt</strong>博客主题 <a href="https://github.com/L33Z22L11/blog-v3" target="_blank" rel="noopener noreferrer">blog-v3</a>，我觉得这个主题非常适合我，算是正式开始了我的博客之旅。
+  - <strong>2025.02 ~ 2025.07</strong> - 基于 <code>blog-v3</code> 主题进行了一些魔改，主要是为了适配我的需求，期间也尝试过参考其他博主魔改的<strong>博客</strong>来添加页面、功能，再次额外感谢<a href="https://blog.bsgun.cn/" target="_blank" rel="noopener noreferrer">梦爱吃鱼</a>大佬的帮助。
+  - <strong>2025.07 ~ 2025.08</strong> - 接触云空间、云服务器，使用 <code>Typecho</code> 、<code>wordpress</code>和<code>Halo</code>等博客系统搭建框架，后续还是转回静态框架，服务器留作一些服务部署。
+  - <strong>2025.09 ~ 至今</strong> - 兜兜转转使用了很多框架(诸如Astro、Nextjs等等)，期间尝试了多种agents、ide等等来辅助编程，于26年10月开始基于 <code>>LiuShen</code> 的Astro博客移植自用到Hugo框架。
+- h3: 技术架构
+  id: 技术架构
+- ul:
+  - 博客基于 <strong>Hugo</strong> 静态站点生成框架搭建
+  - 使用 <strong>Tailwind CSS v4</strong> 进行样式管理
+  - 通过 <strong>Swup</strong> 负责局部页面替换，尽量保持全局组件常驻
+  - 内容以 <strong>Markdown</strong> 为主，统一由内容布局渲染
+  - 支持 <strong>PWA</strong>、<strong>RSS 订阅</strong>、<strong>动态 OG 图片生成</strong>
+  - 全局音乐播放器、搜索、返回顶部等组件独立于页面内容，适配局部刷新
+- h3: 运维与成本
+  id: 运维与成本
+- ul:
+  - text: <strong>域名</strong>
+    sub:
+    - tag: ul
+      items:
+      - <code>081531.xyz</code>：7 元 / 年
+      - <code>kemiaosw.top</code>：39 元 / 年
+      - <code>518339.xyz</code>：7 元 / 年
+  - text: <strong>CDN</strong>
+    sub:
+    - tag: ul
+      items:
+      - <strong>JSDMirror</strong>
+      - <strong>FastlyCDN</strong>
+      - <strong>Cloudflare</strong>
+  - text: <strong>云服务器</strong>
+    sub:
+    - tag: ul
+      items:
+      - <strong><a href="https://www.shengdaoyun.cn/" target="_blank" rel="external nofollow
+        noopener noreferrer">圣道云</a></strong>：香港轻量云，8 核 8GB，29 元 / 月
+  # - text: <strong>备案</strong>
+  #   sub:
+  #   - tag: ul
+  #     items:
+  #     - 已完成 <strong>ICP备案</strong>与<strong>公安备案</strong>，国内访问保持正常
+- h3: 内容定位
+  id: 内容定位
+- ul:
+  - 技术分享：前端开发、后端服务、ai编程
+  - 建站记录：博客魔改、日常记录、资源分享、服务部署
+  - 个人内容：学习笔记、生活随笔、阶段性思考
+- p: 本站会继续围绕“稳定、可维护、阶段性记录”来继续维护博客，尽量维持稳定的更新时间。

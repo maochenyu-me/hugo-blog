@@ -1,21 +1,21 @@
 ---
 title: "关于我"
 layout: about
-description: "数据科学与仿真开发，折腾博客与自动化小工具"
-avatar: "/info/avatar.ico"
-name: "克喵"
+description: "自动化专业，牛马职工，博客魔改，ai编程"
+avatar: "https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0"
+name: "克喵:)"
 greeting: "Hi! I'm"
-motto: "柳影曳曳，清酒孤灯，扬笔撒墨，心境如霜"
+motto: "每一段旅行，都有终点。"
 floatsLeft:
-  - "🐍 Python 信手拈来"
-  - "📉 回归模型调参中"
-  - "🛠️ 仿真搬砖工"
-  - "☕ 深夜编译人"
+  - "博客魔改者"
+  - "ai编程项目"
+  - "服务器维护"
+  - "资源分享者"
 floatsRight:
-  - "Hugo 折腾家 🏗️"
-  - "自动化爱好者 🤖"
-  - "Node.js 副业 🟩"
-  - "喵星常驻居民 🐱"
+  - "Hugo框架爱好"
+  - "Astro框架爱好"
+  - "Docker爱好者"
+  - "小说爱好者"
 # 6 卡片网格（模板：themes/kemiao/layouts/_default/about.html）
 # 所有文案都是占位，改这里即可，不用动主题
 cards:
@@ -23,26 +23,26 @@ cards:
   profile:
     rows:
       - label: "昵称"
-        value: "克喵"
+        value: "克喵:)"
       - label: "GitHub"
-        value: "Kemeow0815"
-        link: "https://github.com/Kemeow0815"
+        value: "maochenyu-me"
+        link: "https://github.com/maochenyu-me"
       - label: "方向"
-        value: "数据科学与仿真开发"
+        value: "自动化技术与应用"
       - label: "技术栈"
-        value: "Python / MATLAB / Simulink / Node.js"
+        value: "Python / MATLAB / Simulink / Node.js 等 "
       - label: "常用工具"
-        value: "Hugo / Git / WorkBuddy"
+        value: "Hugo / Git / Agent / Docker"
       - label: "邮箱"
-        value: "待补充"
+        value: "contact@518339.xyz"
   # 性格侧写（右上，5/12 宽；image 换成自己的 MBTI 插图或删掉整行）
   personality:
-    type: "INTJ"
-    name: "建筑师"
-    summary: "喜欢把混乱的数据整理成清晰的模型，也喜欢把重复的活儿交给脚本。"
-    traits: ["分析", "动手", "较真"]
-    link: "https://www.16personalities.com/ch/intj-%E4%BA%BA%E6%A0%BC"
-    image: "/config/img/enfj.svg"
+    type: "INFJ"
+    name: "提倡者"
+    summary: "以人应然之态待之，方能助其臻于所能之境。"
+    traits: ["理想", "坚守原则", "较真"]
+    link: "https://www.16personalities.com/ch/infj-%E4%BA%BA%E6%A0%BC"
+    image: "/images/infj.svg"
   # 技能与工具（中左，8/12 宽；icon 用 Font Awesome 类名，不填则显示文字）
   skills:
     rows:
@@ -58,8 +58,10 @@ cards:
           icon: "fa-brands fa-docker"
         - name: "Hugo"
           icon: "fa-solid fa-bolt"
-      - - name: "MATLAB"
-        - name: "Simulink"
+      - - name: "Nuxt"
+          svg: "<img src=\"/images/nuxt.svg\" width=\"24\" height=\"24\">"
+        - name: "Astro"
+          svg: "<img src=\"/images/astro.svg\" width=\"24\" height=\"24\">"
         - name: "Windows"
           icon: "fa-brands fa-windows"
         - name: "Linux"
@@ -75,32 +77,38 @@ cards:
       - name: "GitHub"
         url: "https://github.com/Kemeow0815"
         icon: "fa-brands fa-github"
-    hobbies: ["建模", "仿真", "折腾博客", "自动化"]
+      - name: "QQ"
+        url: "https://qm.qq.com/q/4jAMZJH8NO"
+        icon: "fa-brands fa-qq"
+      - name: "Mail"
+        url: "mailto:contact@518339.xyz"
+        icon: "fa-solid fa-envelope"
+    hobbies: ["小说", "ai编程", "折腾博客", "自动化"]
   # 在做的事（下左，7/12 宽）
   projects:
     items:
-      - name: "Hugo 博客"
-        url: "https://github.com/Kemeow0815"
+      - name: "Hugo 博客主题移植"
+        url: "https://github.com/maochenyu-me/hugo-theme-kemiao"
         desc: "Astro 主题移植到 Hugo 的折腾记录，持续补齐源站交互细节。"
-      - name: "workbuddy-auto-signin"
-        url: "https://github.com/Kemeow0815"
-        desc: "Windows 计划任务驱动的 WorkBuddy 每日签到自动化。"
+    #   - name: "workbuddy-auto-signin"
+    #     url: "https://github.com/Kemeow0815"
+    #     desc: "Windows 计划任务驱动的 WorkBuddy 每日签到自动化。"
     focus:
-      title: "近期节奏"
+      title: "近期动作"
       items:
+        - title: "秋季校招"
+          desc: "找一个符合专业，不那么牛马的岗位。"
         - title: "博客移植"
-          desc: "对照源站清单补齐 swup、灯箱、最近评论等交互。"
-        - title: "数据科学"
-          desc: "回归建模与仿真任务的日常迭代。"
-        - title: "自动化"
-          desc: "把重复劳动交给脚本和计划任务。"
+          desc: "将好看好用的项目魔改移植。"
+        - title: "ai编程"
+          desc: "开发一些有用的项目。"
   # 自我评价（下右，5/12 宽）
   evaluation:
     items:
-      - label: "做事"
-        text: "先把问题拆清楚再动手，能用脚本解决的不重复第二遍。"
+      - label: "计划"
+        text: "先把问题拆清楚再动手，。"
       - label: "学习"
-        text: "数据科学、仿真、前端折腾三线并行，越折腾越上头。"
-      - label: "总结"
-        text: "喵！"
+        text: "学习新框架、新技术。"
+      - label: "魔改"
+        text: "基于个人的需求完善项目"
 ---

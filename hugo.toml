@@ -99,8 +99,42 @@ summaryLength = 120
   beianIcp = ''
   beianPolice = ''
   beianPoliceCode = ''
-  # 页脚技术署名：仅保留 Hugo（克喵 2026-10-06 拍板）
+  # 页脚 logo 下的一句话简介
+  footerTagline = '每一段旅行，都有终点。'
+
+  # 页脚署名区旧写法（单字段，兜底）：footerCredits 为空时生效
+  # footerCreditUrl 留空 = 纯文本不跳转；footerCreditNewTab = true 时新标签页打开
   footerCredit = 'Hugo'
+  footerCreditUrl = 'https://gohugo.io/'
+  footerCreditNewTab = true
+
+  # 页脚署名区：数组顺序决定显示顺序，项之间自动加分隔线。
+  #   text   署名文字；留空则跳过该项
+  #   url    跳转链接；留空 = 纯文本不跳转
+  #   newTab true = 新标签页打开（自动带 rel="noopener noreferrer"）
+  # 在此处追加 [[params.footerCredits]] 段落即可增加一个位置（排在 Hugo 之前）。
+  # 下面是一个已注释的示例槽位，取消注释并填写内容即可使用：
+   [[params.footerCredits]]
+     text = 'Designed By LiuShen'
+     url = 'https://blog.liushen.fun/'
+     newTab = true
+  [[params.footerCredits]]
+    text = 'Hugo'
+    url = 'https://gohugo.io/'
+    newTab = true
+
+  # 站点 Logo 文字：头部与页脚共用同一个 SVG（partials/logo-svg.html 渲染），改这里即可，不动模板。
+  # 布局按字宽自动排：中文/全角 1em，字母数字 0.6em，窄标点 0.45em；球体字符间距 markLetterSpacing。
+  # 排版不满意时用 leftOffsetX / markOffsetX / rightOffsetX 微调（px）；width 留 0 = 按内容自动算。
+  [params.logo]
+    left = '喵'
+    mark = '{·}'
+    right = '洛阁'
+    markLetterSpacing = -30
+    leftOffsetX = 0
+    markOffsetX = 0
+    rightOffsetX = 0
+    width = 745
 
   # 图标加载：cdn 与源站同 CDN；local 经 Hugo Pipes 自托管（生产推荐）
   [params.icons]
@@ -265,8 +299,12 @@ summaryLength = 120
       url = 'https://qm.qq.com/q/4jAMZJH8NO'
     [[params.hero.socials]]
       icon = 'fa-brands fa-github'
-      title = 'LiuShen 的 GitHub'
+      title = 'KeMiao 的 GitHub'
       url = 'https://github.com/maochenyu-me'
+    [[params.hero.socials]]
+      icon = 'fa-brands fa-telegram'
+      title = '通过 Telegram 联系 克喵'
+      url = 'https://t.me/Kemeow0815'   # ← 把链接改成你的 Telegram 个人或频道地址
     [[params.hero.socials]]
       icon = 'fa-solid fa-rss'
       title = 'RSS Feed'
@@ -321,8 +359,8 @@ summaryLength = 120
       detailLink = true
   # 友链朋友圈动态数据（Friend-Circle-Lite）
   [params.fcircle]
-    api = 'https://fc.liushen.fun/all.json'
-    statusApi = 'https://fc.liushen.fun/link.json'
+    api = 'https://fc.518339.xyz/all.json'
+    statusApi = 'https://fc.518339.xyz/link.json'
   # 文章列表分页
   [pagination]
     pagerSize = 12

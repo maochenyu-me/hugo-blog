@@ -2,74 +2,74 @@
 - title: 个人网站
   items:
     - name: 个人主页
-      url: "https://www.liushen.fun/"
+      url: "https://home.518339.xyz/"
       icon: "fa-solid fa-house"
     - name: 个人博客
-      url: "https://blog.liushen.fun/"
+      url: "https://blog.kemiaosw.top/"
       icon: "fa-regular fa-pen-to-square"
     - name: 个人相册
-      url: "https://xc.liushen.fun/"
+      url: "https://xc.518339.xyz/"
       icon: "fa-solid fa-camera"
-    - name: 音乐拾光
-      url: "https://music.liushen.fun/"
-      icon: "fa-solid fa-music"
+    # - name: 音乐拾光
+    #   url: "https://music.liushen.fun/"
+    #   icon: "fa-solid fa-music"
     - name: Github
-      url: "https://github.com/willow-god"
+      url: "https://github.com/maochenyu-me"
       icon: "fa-brands fa-github"
 
 - title: 常用服务
   items:
-    - name: 代码片段
-      url: "https://gist.liushen.fun/"
-      icon: "fa-solid fa-code"
-    - name: 提笔摘星
-      url: "https://mm.liushen.fun/"
-      icon: "fa-solid fa-pen-nib"
+    # - name: 代码片段
+    #   url: "https://gist.liushen.fun/"
+    #   icon: "fa-solid fa-code"
+    # - name: 提笔摘星
+    #   url: "https://mm.liushen.fun/"
+    #   icon: "fa-solid fa-pen-nib"
     - name: 访客统计
-      url: "https://um.liushen.fun/"
+      url: "https://um.081531.xyz/"
       icon: "fa-solid fa-chart-simple"
-    - name: 流量数据
-      url: "https://data.liushen.fun/"
-      icon: "fa-solid fa-chart-simple"
-    - name: 清羽图床
-      url: "https://img.liiiu.cn/"
-      icon: "fa-solid fa-camera"
+    # - name: 流量数据
+    #   url: "https://data.liushen.fun/"
+    #   icon: "fa-solid fa-chart-simple"
+    # - name: 清羽图床
+    #   url: "https://img.liiiu.cn/"
+    #   icon: "fa-solid fa-camera"
     - name: 不蒜计数
-      url: "https://bsz.liiiu.cn/"
+      url: "https://bsz.518339.xyz/"
       icon: "fa-solid fa-hashtag"
     - name: 服务状态
-      url: "https://status.liushen.fun/"
+      url: "https://uptime.081531.xyz/status/web"
       icon: "fa-solid fa-desktop"
-    - name: 静态资源
-      url: "https://cdn.liiiu.cn/"
-      icon: "fa-solid fa-link"
-    - name: 每日热榜
-      url: "https://hot.liushen.fun/"
-      icon: "fa-solid fa-share-nodes"
+    # - name: 静态资源
+    #   url: "https://cdn.liiiu.cn/"
+    #   icon: "fa-solid fa-link"
+    # - name: 每日热榜
+    #   url: "https://hot.liushen.fun/"
+    #   icon: "fa-solid fa-share-nodes"
 
 - title: 实用工具
   items:
-    - name: 内容中转
-      url: "https://share.liushen.fun/#/"
-      icon: "fa-solid fa-share-nodes"
-    - name: 临时邮箱
-      url: "https://tmail.liushen.de/"
-      icon: "fa-solid fa-envelope"
-    - name: 清羽盘搜
-      url: "https://so.liushen.fun/"
-      icon: "fa-solid fa-magnifying-glass"
+    # - name: 内容中转
+    #   url: "https://share.liushen.fun/#/"
+    #   icon: "fa-solid fa-share-nodes"
+    # - name: 临时邮箱
+    #   url: "https://tmail.liushen.de/"
+    #   icon: "fa-solid fa-envelope"
+    # - name: 清羽盘搜
+    #   url: "https://so.liushen.fun/"
+    #   icon: "fa-solid fa-magnifying-glass"
     - name: 封面设计
-      url: "https://cover.qyliu.top/"
+      url: "https://cover.518339.xyz/"
       icon: "fa-regular fa-pen-to-square"
-    - name: 迷你封面
-      url: "https://mini-cover.qyliu.top/"
-      icon: "fa-regular fa-pen-to-square"
-    - name: 万能图标
-      url: "https://icon.liiiu.cn/"
-      icon: "fa-solid fa-hashtag"
-    - name: 灵感白板
-      url: "https://draw.liiiu.cn/"
-      icon: "fa-regular fa-pen-to-square"
-    - name: 思维导图
-      url: "https://xmind.liiiu.cn/"
-      icon: "fa-solid fa-bars-staggered"
+    # - name: 迷你封面
+    #   url: "https://mini-cover.qyliu.top/"
+    #   icon: "fa-regular fa-pen-to-square"
+    # - name: 万能图标
+    #   url: "https://icon.liiiu.cn/"
+    #   icon: "fa-solid fa-hashtag"
+    # - name: 灵感白板
+    #   url: "https://draw.liiiu.cn/"
+    #   icon: "fa-regular fa-pen-to-square"
+    # - name: 思维导图
+    #   url: "https://xmind.liiiu.cn/"
+    #   icon: "fa-solid fa-bars-staggered"

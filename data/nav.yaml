@@ -4,11 +4,11 @@
   trigger_icon: "fa-solid fa-house"
   links:
     - name: 个人主页
-      url: "https://www.liushen.fun/"
+      url: "https://home.518339.xyz/"
       external: true
       icon: "fa-solid fa-house"
     - name: 个人相册
-      url: "https://xc.liushen.fun/"
+      url: "https://xc.518339.xyz/"
       external: true
       icon: "fa-solid fa-camera"
 
@@ -47,18 +47,18 @@
     - name: 留言白板
       url: "/comment/"
       icon: "fa-regular fa-comment-dots"
-    - name: 提笔摘星
-      url: "https://mm.liushen.fun/"
-      external: true
-      icon: "fa-solid fa-pen-nib"
+    # - name: 提笔摘星
+    #   url: "https://mm.liushen.fun/"
+    #   external: true
+    #   icon: "fa-solid fa-pen-nib"
 
 - name: 分享
   trigger_icon: "fa-solid fa-share-nodes"
   links:
-    - name: 代码片段
-      url: "https://gist.liushen.fun/"
-      external: true
-      icon: "fa-solid fa-code"
+    # - name: 代码片段
+    #   url: "https://gist.liushen.fun/"
+    #   external: true
+    #   icon: "fa-solid fa-code"
     - name: 日常说说
       url: "/shuoshuo/"
       icon: "fa-regular fa-comment-dots"

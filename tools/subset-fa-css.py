@@ -8,8 +8,8 @@ import glob
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "themes/kemiao/static/fontawesome/css/all.min.css")
-OUT = os.path.join(ROOT, "themes/kemiao/static/fontawesome/css/all.subset.min.css")
+SRC = os.path.join(ROOT, "themes/kemiao/assets/fontawesome/css/all.min.css")
+OUT = os.path.join(ROOT, "themes/kemiao/assets/fontawesome/css/all.subset.min.css")
 
 SCAN_GLOBS = [
     "themes/kemiao/layouts/**/*.html",
@@ -20,7 +20,40 @@ SCAN_GLOBS = [
     "hugo.toml",
 ]
 
+# CSS 里 content:"<码点字符>" 注入的字形（音乐胶囊播放/暂停图标等），
+# 不会被 fa-xxx 类名扫描捕获，必须按码点反查类名一起保留。
+CSS_GLOBS = [
+    "themes/kemiao/assets/css/*.css",
+    "themes/kemiao/layouts/**/*.html",
+]
+
 ICON_DEF = re.compile(r'([^{}]+)\{--fa:"\\([0-9a-f]+)\s*"\}')
+CSS_CONTENT = re.compile(r'content:"([^"]*)"')
+
+
+def css_content_codepoints():
+    """收集 CSS 中 content:"<字符>" 注入的私用区码点（FA 图标字形）。"""
+    cps = set()
+    for pattern in CSS_GLOBS:
+        for path in glob.glob(os.path.join(ROOT, pattern), recursive=True):
+            try:
+                text = open(path, encoding="utf-8").read()
+            except OSError:
+                continue
+            for m in CSS_CONTENT.finditer(text):
+                for ch in m.group(1):
+                    if 0xE000 <= ord(ch) <= 0xF8FF:
+                        cps.add(ord(ch))
+    return cps
+
+
+def names_by_codepoint(css):
+    """码点 -> FA 类名集合（用于反查 CSS content 里注入的字形）。"""
+    table = {}
+    for m in ICON_DEF.finditer(css):
+        cp = int(m.group(2), 16)
+        table.setdefault(cp, set()).update(re.findall(r"\.fa-([a-z0-9-]+)", m.group(1)))
+    return table
 
 
 def used_icons(all_names):
@@ -59,7 +92,11 @@ def main():
     names = set()
     for m in ICON_DEF.finditer(css):
         names.update(re.findall(r"\.fa-([a-z0-9-]+)", m.group(1)))
+    nb_cp = names_by_codepoint(css)
     used = used_icons(names)
+    # 把 CSS content:"<字符>" 里注入的码点反查成类名，一并保留（如播放/暂停图标）
+    for cp in css_content_codepoints():
+        used.update(nb_cp.get(cp, set()))
     print(f"CSS 内图标定义 {len(names)} 个，项目用到 {len(used)} 个")
 
     kept, dropped = [], 0

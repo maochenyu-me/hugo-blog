@@ -1,8 +1,8 @@
 blocks:
 - h3: 更新日期
   id: 更新日期
-- p: 本协议的最近更新日期为：2024-09-08。
-- p: 本站非常重视用户的隐私和个人信息保护。你在使用 <code>blog.liushen.fun</code> 网站时，可能会收集和使用你的相关信息。通过本《隐私政策》向你说明如何收集、使用、保存、共享和转让这些信息，并阐明你的相关权利。
+- p: 本协议的最近更新日期为：2026-10-20。
+- p: 本站非常重视用户的隐私和个人信息保护。你在使用 <code>blog.kemiaosw.top</code> 网站时，可能会收集和使用你的相关信息。通过本《隐私政策》向你说明如何收集、使用、保存、共享和转让这些信息，并阐明你的相关权利。
 - h3: 一、内容规范与法律责任
   id: 一内容规范与法律责任
 - p: 本站严肃声明，不涉及任何政治、国家主权、暴力、违法、恐怖主义、种族歧视、宗教极端主义或其他违反国家法律法规及国际公约的讨论或内容。我们承诺并要求用户在使用本站时，严格遵守以下规定：
@@ -33,7 +33,7 @@ blocks:
   id: 二个人信息的收集与使用
 - h4: 1. 访问网站时自动收集的信息
   id: 1-访问网站时自动收集的信息
-- p: 在你访问 <code>blog.liushen.fun</code> 网站时，本站可能会自动收集以下信息：
+- p: 在你访问 <code>blog.kemiaosw.top</code> 网站时，本站可能会自动收集以下信息：
 - ul:
   - <strong>网络身份标识信息</strong>：包括你的浏览器 User Agent、IP 地址等；
   - <strong>设备信息</strong>：设备型号、操作系统、分辨率、设备设置等；
@@ -45,7 +45,6 @@ blocks:
 - p: 本站使用了以下第三方服务，这些服务可能会收集相关信息：
 - ul:
   - <strong>UMAMI 统计（作者自建）</strong>：用于记录用户的访问信息、操作过程；
-  - <strong>腾讯云 CDN</strong>、<strong>LiuShen CDN（作者自建）</strong>：收集访问设备、操作系统、浏览器版本信息及页面加载情况；
   - <strong>不蒜子统计（作者自建）</strong>：用于记录访客的浏览量与站点流量；
   - <strong>Bilibili</strong>、<strong>网易云音乐</strong>：如果你播放嵌入的音乐或视频，相关平台可能会收集相应的浏览和播放数据。
 - h4: 3. 信息的使用目的
@@ -63,7 +62,6 @@ blocks:
   id: 1-评论时收集的信息
 - p: 当你进行评论时，本站可能会收集以下信息：
 - ul:
-  - <strong>QQ 头像</strong>：如果你使用 QQ 邮箱进行评论，系统会自动获取你的 QQ 头像用于显示；
   - <strong>邮箱地址</strong>：填写的邮箱地址仅用于通知回复内容，不会公开；
   - <strong>IP 地址</strong>：用于防止垃圾评论和恶意访问；
   - <strong>浏览器代理信息</strong>：用于分析评论设备及快速定位问题；
@@ -121,7 +119,7 @@ blocks:
 
     <blockquote>
 
-    作者：LiuShen，原文链接：[文章链接]，版权声明：基于 <a href="/safego/?u=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtaGFucw"
+    作者：克喵:)，原文链接：[文章链接]，版权声明：基于 <a href="/safego/?u=aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9sZWdhbGNvZGUuemgtaGFucw"
     target="_blank" rel="external nofollow noopener noreferrer">CC BY-NC-SA 4.0</a> 协议授权。
 
     </blockquote>'
@@ -169,14 +167,14 @@ blocks:
 - h3: 十一、用户权利
   id: 十一用户权利
 - p: 你有权访问、更新、更正、删除你的个人信息，并有权撤回你的同意。你可以随时通过邮件或留言方式联系我们，行使你的权利。
-- h3: 相关证书
-  id: 相关证书
-- p: <strong>以下内容仅供本网站展示，禁止盗用！</strong>
-- p: '<figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8c99714aed.webp" alt="域名证书" loading="lazy"
-    decoding="async"><figcaption class="article-image-caption">域名证书</figcaption></figure>
+# - h3: 相关证书
+#   id: 相关证书
+# - p: <strong>以下内容仅供本网站展示，禁止盗用！</strong>
+# - p: '<figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8c99714aed.webp" alt="域名证书" loading="lazy"
+#     decoding="async"><figcaption class="article-image-caption">域名证书</figcaption></figure>
 
-    <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cadfe264d.webp" alt="ICP备案查询" loading="lazy"
-    decoding="async"><figcaption class="article-image-caption">ICP备案查询</figcaption></figure>
+#     <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cadfe264d.webp" alt="ICP备案查询" loading="lazy"
+#     decoding="async"><figcaption class="article-image-caption">ICP备案查询</figcaption></figure>
 
-    <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cb0eebfe4.webp" alt="公安备案查询" loading="lazy"
-    decoding="async"><figcaption class="article-image-caption">公安备案查询</figcaption></figure>'
+#     <figure class="article-image-figure"><img src="https://p.liiiu.cn/i/2024/07/30/66a8cb0eebfe4.webp" alt="公安备案查询" loading="lazy"
+#     decoding="async"><figcaption class="article-image-caption">公安备案查询</figcaption></figure>'

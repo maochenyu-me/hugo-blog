@@ -179,7 +179,7 @@ summaryLength = 120
   [params.article]
     [params.article.aiSummary]
       brand = '克喵のAI摘要'
-      model = 'KIMI-K2.5'
+      model = 'Qwen3-8B'
     [params.article.share]
       whatsapp = true
       facebook = true

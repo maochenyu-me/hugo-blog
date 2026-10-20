@@ -22,7 +22,7 @@ description: "kemiao 是一套移植自 blog.liushen.fun 的 Hugo 博客主题�
 
 # aiSummary：文章页顶部「AI 摘要」卡片正文（打字机效果逐字输出）
 #            不填则回退到 description
-aiSummary: "这是一篇 hello world。kemiao 主题以毛玻璃质感为视觉基调，内置双搜索后端、双评论后端、中控台偏好设置、自定义右键菜单、说说动态流与外链安全跳转等能力。本文同时是一份文章 frontmatter 字段速查表。"
+aiSummary: "kemiao 是一款基于 Hugo v0.166.0 的博客主题，移植自 blog.liushen.fun，保留毛玻璃与终端风格的视觉设计，支持亮暗双主题切换。具备双搜索后端（pagefind/algolia）、双评论系统（artalk/twikoo）、AI摘要卡、外链安全跳转、音乐胶囊等核心功能。文章级 frontmatter 字段包含 slug、title、date（需带时区）、lastmod、draft 等，同时需注意 cover 图片路径校验及部分字段仅适用于特定页面。主题通过剥离 Astro 的 cid 作用域并引用原站 CSS 实现像素级还原，但需调整字体路径与样式前缀避免冲突。部署推荐使用自带构建脚本清理残留文件，并通过覆盖层机制自定义主题部分模板。"
 
 # ── 分类与标签 ────────────────────────────────────────────────────────
 # categories：渲染为文章页左上角分类徽章，并生成 /categories/<term>/

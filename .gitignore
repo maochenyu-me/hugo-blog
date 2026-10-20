@@ -10,3 +10,4 @@ yarn-error.log*
 # Local workbuddy/port notes
 .workbuddy/
 docs/
+.env

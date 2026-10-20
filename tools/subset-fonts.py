@@ -11,8 +11,8 @@ from fontTools.pens.boundsPen import BoundsPen
 from fontTools.subset import Options, Subsetter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CSS = os.path.join(ROOT, "themes/kemiao/static/fontawesome/css/all.min.css")
-WEBFONTS = os.path.join(ROOT, "themes/kemiao/static/fontawesome/webfonts")
+CSS = os.path.join(ROOT, "themes/kemiao/assets/fontawesome/css/all.min.css")
+WEBFONTS = os.path.join(ROOT, "themes/kemiao/assets/fontawesome/webfonts")
 FULL = os.path.join(ROOT, "tools/fonts/full")
 FONTS = ["fa-solid-900", "fa-brands-400", "fa-regular-400"]
 
@@ -23,6 +23,13 @@ SCAN_GLOBS = [
     "content/**/*.md",
     "data/*.yaml",
     "hugo.toml",
+]
+
+# CSS 里 content:"<码点字符>" 直接注入的字形（音乐胶囊播放/暂停图标等），
+# 不会被 fa-xxx 类名扫描捕获，必须单独收集码点。
+CSS_GLOBS = [
+    "themes/kemiao/assets/css/*.css",
+    "themes/kemiao/layouts/**/*.html",
 ]
 
 
@@ -51,6 +58,22 @@ def used_icons(mapping):
     return used
 
 
+def css_content_codepoints():
+    """收集 CSS 中 content:"<字符>" 注入的私用区码点（FA 图标字形）。"""
+    cps = set()
+    for pattern in CSS_GLOBS:
+        for path in glob.glob(os.path.join(ROOT, pattern), recursive=True):
+            try:
+                text = open(path, encoding="utf-8").read()
+            except OSError:
+                continue
+            for m in re.finditer(r'content:"([^"]*)"', text):
+                for ch in m.group(1):
+                    if 0xE000 <= ord(ch) <= 0xF8FF:
+                        cps.add(ord(ch))
+    return cps
+
+
 def glyph_bounds(font, cp):
     cmap = font.getBestCmap()
     name = cmap.get(cp)
@@ -64,7 +87,7 @@ def glyph_bounds(font, cp):
 def main():
     mapping = icon_map()
     used = used_icons(mapping)
-    cps = sorted({mapping[u] for u in used})
+    cps = sorted({mapping[u] for u in used} | css_content_codepoints())
     print(f"图标定义 {len(mapping)} 个，项目用到 {len(used)} 个（{len(cps)} 个码点）")
 
     os.makedirs(FULL, exist_ok=True)

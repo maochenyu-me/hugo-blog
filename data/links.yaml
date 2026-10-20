@@ -14,5 +14,14 @@ groups:
     avatar: https://img.zhheo.com/i/67d8fa75943e4.webp
     desc: 分享设计与科技生活
     siteshot: https://img.zhheo.com/i/67d8fb5f563ff.webp
-    linkPage: https://blog.zhheo.com/link/    
+    linkPage: https://blog.zhheo.com/link/
+- title: 功能性网站
+  desc: 不是寻常的博客，有各种的功能性，如书馆
+  badge: 1 sites
+  sites:       
+  - name: 知海图书馆
+    url: https://www.zhihailib.com
+    avatar: https://cdn.jsdmirror.com/gh/kmoretti/piclist-img@main/img/favicon_z.webp
+    desc: 干净的中文电子书站，可按书名、作者、出版社、ISBN 精确找书，能在线读，没有弹窗广告，还有按阶段整理的导读书单。
+    # siteshot: https://cdn.jsdmirror.com/gh/kmoretti/piclist-img@main/img/zhihailib.webp
 tombstone: <p>💡 <strong>说明</strong>：此处记录的友链因长期无法访问、站点关闭、或友链反链丢失，长期未更新(一年)等原因，由站长慎重考虑后，手动下线。</p><p>若因技术问题导致下线，欢迎站长修复后随时<a href="/about">联系恢复</a>。若站点已停止维护，则可能不再接受恢复请求。如有特殊情况，可联系站长详询。</p>

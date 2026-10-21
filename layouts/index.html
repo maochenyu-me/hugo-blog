@@ -3,7 +3,7 @@
 {{- partial "hero.html" . }}
 {{- partial "talk-card.html" . }}
 
-  {{- $all := where site.RegularPages "Type" "posts" }}
+  {{- $all := where (where site.RegularPages "Type" "posts") "Draft" "eq" false }}
   {{- $per := site.Params.sidebar.postPerIndex | default 8 }}
   <section id="recent-posts" class="pt-6 pb-6">
     <div class="lg:flex lg:gap-6">
